@@ -1,4 +1,4 @@
-# instant.page’s site source code
+# [instant.page’s site](https://instant.page/) source code
 
 Requires [Node.js](https://nodejs.org/en/).
 
