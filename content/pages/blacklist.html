@@ -1,0 +1,37 @@
+<_page__blacklist__title>
+Pages not preloaded
+</_page__blacklist__title>
+
+<_page__blacklist__description>
+Pages with a query string (a “?”) in their URL aren’t preloaded by default.
+</_page__blacklist__description>
+
+<_page__blacklist__content>
+<h1 class="title">Pages not preloaded</h1>
+
+<p>Pages with a query string (a “?”) in their URL aren’t preloaded by default because they sometimes trigger an action (such as logging out or deleting something).</p>
+
+<h3>Whitelisting pages with a query string</h3>
+
+<p>If you want to let all pages with a query string be preloaded, add a <code class="code">data-instant-allow-query-string</code> attribute to the &lt;body&gt;.</p>
+
+<p>If you’d like to allow only select links with a query string to be preloaded, add a <code class="code">data-instant</code> attribute to them (available since version 1.1.0):</p>
+
+<code class="code code--block">&lt;a href="articles?page=2" data-instant&gt;Page 2&lt;/a&gt;</code>
+
+<h3>Blacklisting pages</h3>
+
+<p>To manually blacklist a link that triggers an action add a <code class="code">data-no-instant</code> attribute to them:</p>
+
+<code class="code code--block">&lt;a href="logout?token=f2d2650ce6" data-no-instant&gt;Log out&lt;/a&gt;</code>
+
+<p>This is to be used mainly if you use <code class="code">data-instant-allow-query-string</code>, otherwise by default links with a query string are already blacklisted.</p>
+
+<h3>External links (since version 1.2.0)</h3>
+
+<p>External links aren’t preloaded by default, to allow them all add a <code class="code">data-instant-allow-external-links</code> attribute to the &lt;body&gt;.</p>
+
+<p>To allow only some external links, add a <code class="code">data-instant</code> attribute to them.</p>
+
+<include>cta-widget</include>
+</_page__blacklist__content>
