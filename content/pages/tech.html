@@ -22,7 +22,7 @@ Preloading is done with &lt;link rel=&quot;prefetch&quot; href=&quot;url&quot;&g
   </a>
 </p>
 
-<h2>Browser support</h2>
+<h2 id="browser-support">Browser support</h2>
 
 <p>instant.page is progressive enhancement — there’s no impact on browsers that don’t support it.</p>
 
@@ -30,7 +30,7 @@ Preloading is done with &lt;link rel=&quot;prefetch&quot; href=&quot;url&quot;&g
 
 <p>Firefox supports &lt;link rel="prefetch"&gt; but will redownload the page if it’s not cached.</p>
 
-<h3>Incompatible browsers</h3>
+<h3 id="unsupported-browsers">Incompatible browsers</h3>
 
 <p>Safari doesn’t support &lt;link rel="prefetch"&gt;.</p>
 
@@ -38,7 +38,7 @@ Preloading is done with &lt;link rel=&quot;prefetch&quot; href=&quot;url&quot;&g
 
 <p>Edge doesn’t support &lt;link rel="prefetch"&gt; but is going to adopt Chrome’s engine which does.</p>
 
-<h2>Secure CDN</h2>
+<h2 id="cdn">Secure CDN</h2>
 
 <p>instant.page’s script is hosted serverless with <a href="https://www.cloudflare.com/products/cloudflare-workers/">Cloudflare Workers</a> so that there’s no server to hack into. <span class="footnote-button"></span></p>
 
@@ -52,7 +52,7 @@ Preloading is done with &lt;link rel=&quot;prefetch&quot; href=&quot;url&quot;&g
   <p>The only browser versions that implement modules without implementing subresource integrity are Edge 16, Safari 10.1 and Safari 11.0. They account for about 1% of page views.</p>
 </div>
 
-<h2>History</h2>
+<h2 id="history">History</h2>
 
 <p>The idea of preloading web pages on hover and touchstart comes from an older library of mine, <a href="http://instantclick.io/">InstantClick</a>, which uses Ajax and <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API">history.pushState</a> instead of &lt;link rel="prefetch"&gt;, transforming a site into a single-page application. It makes a site even smoother but requires additional work.</p>
 
@@ -60,7 +60,7 @@ Preloading is done with &lt;link rel=&quot;prefetch&quot; href=&quot;url&quot;&g
 
 <p>Google’s recent release of <a href="https://github.com/GoogleChromeLabs/quicklink">quicklink</a>, which preloads links with &lt;link rel="prefetch"&gt; as soon as they are shown, made it clear that I should focus on building a “lite”, easier to use version of InstantClick, which is instant.page.</p>
 
-<h2>Future related projects</h2>
+<h2 id="future-projects">Future related projects</h2>
 
 <p>InstantClick provides one of the smoothest experiences possible, while still not requiring as much work as a framework (who give lesser results), so I’m considering working on it again later on.</p>
 

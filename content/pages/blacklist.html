@@ -11,7 +11,7 @@ Pages with a query string (a “?”) in their URL aren’t preloaded by default
 
 <p>Pages with a query string (a “?”) in their URL aren’t preloaded by default because they sometimes trigger an action (such as logging out or deleting something).</p>
 
-<h3>Whitelisting pages with a query string</h3>
+<h3 id="whitelist-query-string">Whitelisting pages with a query string</h3>
 
 <p>If you want to let all pages with a query string be preloaded, add a <code class="code">data-instant-allow-query-string</code> attribute to the &lt;body&gt;.</p>
 
@@ -19,7 +19,7 @@ Pages with a query string (a “?”) in their URL aren’t preloaded by default
 
 <code class="code code--block">&lt;a href="articles?page=2" data-instant&gt;Page 2&lt;/a&gt;</code>
 
-<h3>Blacklisting pages</h3>
+<h3 id="blacklisting">Blacklisting pages</h3>
 
 <p>To manually blacklist a link that triggers an action add a <code class="code">data-no-instant</code> attribute to them:</p>
 
@@ -27,7 +27,7 @@ Pages with a query string (a “?”) in their URL aren’t preloaded by default
 
 <p>This is to be used mainly if you use <code class="code">data-instant-allow-query-string</code>, otherwise by default links with a query string are already blacklisted.</p>
 
-<h3>External links (since version 1.2.0)</h3>
+<h3 id="external-links">External links (since version 1.2.0)</h3>
 
 <p>External links aren’t preloaded by default, to allow them all add a <code class="code">data-instant-allow-external-links</code> attribute to the &lt;body&gt;.</p>
 
