@@ -272,6 +272,11 @@ body {
   font-weight: 500;
 }
 
+h3 small {
+  font-size: 17px;
+  font-weight: normal;
+}
+
 .nav {
   max-width: var(--max-width);
   margin: 2em auto;
