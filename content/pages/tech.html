@@ -52,6 +52,14 @@ Preloading is done with &lt;link rel=&quot;prefetch&quot; href=&quot;url&quot;&g
   <p>The only browser versions that implement modules without implementing subresource integrity are Edge 16, Safari 10.1 and Safari 11.0. They account for about 1% of page views.</p>
 </div>
 
+<h2 id="self-hosting">Self-hosting</h2>
+
+<p>Hosting the script yourself is also possible. <a href="/{{VERSIONS_LATEST}}" download="instantclick-{{VERSIONS_LATEST}}.js">Download the latest version</a> then add a module script tag just before &lt;/body&gt;:</p>
+
+<code class="code code--block">&lt;script src="instantclick-{{VERSIONS_LATEST}}.js" type="module"&gt;&lt;/script&gt;</code>
+
+<p>You can also install it via npm: <code class="code">npm i instant.page</code>.</p>
+
 <h2 id="history">History</h2>
 
 <p>The idea of preloading web pages on hover and touchstart comes from an older library of mine, <a href="http://instantclick.io/">InstantClick</a>, which uses Ajax and <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API">history.pushState</a> instead of &lt;link rel="prefetch"&gt;, transforming a site into a single-page application. It makes a site even smoother but requires additional work.</p>

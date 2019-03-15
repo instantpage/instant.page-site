@@ -36,12 +36,10 @@ function generatePage(path) {
 
 function generateWithIncludes(key) {
   let content = pages[key]
+  content = content.replace(/\{\{VERSIONS_LATEST\}\}/g, versions.latest)
+  content = content.replace(/\{\{VERSIONS_LATEST_HASH\}\}/g, versions.hashes[versions.latest])
   content = content.replace(/<include>([^<]+)<\/include>/g, (match, includeKey) => {
     let includeContent = generateWithIncludes(includeKey)
-    if (includeKey == 'cta-widget') {
-      includeContent = includeContent.replace(/\{\{VERSIONS_LATEST\}\}/g, versions.latest)
-      includeContent = includeContent.replace(/\{\{VERSIONS_LATEST_HASH\}\}/g, versions.hashes[versions.latest])
-    }
     return includeContent
   })
   return content
