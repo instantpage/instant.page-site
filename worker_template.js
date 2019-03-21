@@ -14,7 +14,7 @@ async function handleRequest(request) {
   if (path in versions.content) {
     headers['Content-Type'] = 'text/javascript'
     headers['Access-Control-Allow-Origin'] = '*'
-    headers['Cache-Control'] = 'max-age=' + (60 * 60 * 24 * 365)
+    headers['Cache-Control'] = 'max-age=' + (60 * 60 * 24 * 30)
     content = versions.content[path]
   }
   else if (path in scripts) {
