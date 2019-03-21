@@ -106,6 +106,12 @@ body {
   padding: 0 var(--page-padding);
 }
 
+@media (MAX-width: 1149px) {
+  .content {
+    width: calc(100vw - var(--page-padding) * 2); /* I have no idea why that’s needed */
+  }
+}
+
 .content > .title {
   font-weight: 500;
   font-size: 1.85em;
