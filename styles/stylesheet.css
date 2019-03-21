@@ -6,7 +6,7 @@
 
   --max-width: 820px;
   --page-padding: 12px;
-  --nav-width: 200px;
+  --nav-width: 204px;
   --grid-gap: 40px;
   --main-column-width: calc(var(--max-width) + var(--page-padding) * 2);
   --side-column-width: calc(var(--nav-width));
