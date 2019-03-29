@@ -1,4 +1,5 @@
 const http = require('http')
+const https = require('https')
 const fs = require('fs')
 
 const versions = require('./includes/versions')
@@ -8,6 +9,10 @@ const pages = require('./includes/pages')
 const stylesheet = fs.readFileSync('styles/stylesheet.css').toString().trim()
 
 eval(fs.readFileSync('./includes/generatePage.js').toString())
+
+const config = require(fs.existsSync('./config.js') ? './config.js' : './config.sample.js')
+
+let githubStars
 
 async function requestListener(req, res) {
   const path = req.url.split('?')[0].substr(1)
@@ -32,6 +37,18 @@ async function requestListener(req, res) {
   else if (`page__${pagePath(path)}__content` in pages) {
     //headers['Cache-Control'] = 'max-age=5'
     content = generatePage(path)
+
+    if (!githubStars) {
+      https.get(`https://api.github.com/repos/instantpage/instant.page?client_id=${config.githubApi.client_id}&client_secret=${config.githubApi.client_secret}`, {headers: {'User-Agent': 'instantpage'}}, (res) => {
+        let data = ''
+        res.on('data', (chunk) => {
+          data += chunk
+        })
+        res.on('end', () => {
+          githubStars = JSON.parse(data).stargazers_count
+        })
+      })
+    }
   }
   else if (['favicon.ico', 'twitter_summary_image_v2.png'].includes(path)) {
     headers['Content-Type'] = 'image/png'

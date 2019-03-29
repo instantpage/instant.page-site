@@ -226,15 +226,20 @@ body {
 }
 
 .button--github {
-  font-size: smaller;
+  font-size: 16px;
   text-decoration: none;
   border-radius: 6px;
+  color: inherit;
+  padding: 2px 7px;
+  box-shadow: none;
 }
 
 .button__github-logo {
-  width: 20px;
-  height: 20px;
-  vertical-align: text-top;
+  --size: 16px;
+  width: var(--size);
+  height: var(--size);
+  vertical-align: middle;
+  margin-bottom: 4px;
 }
 
 .content > h2 {
@@ -330,23 +335,30 @@ h3 small {
 
 .aside {
   grid-area: aside;
-}
-
-.nav {
-  margin: 2em auto;
-  display: flex;
   width: var(--nav-width);
 }
 
 @media (MAX-width: 1149px) {
-  .nav {
+  .aside {
     margin: auto;
   }
 }
 
 @media (min-width: 1150px) {
-  .nav {
+  .aside__container {
     position: fixed;
+    width: inherit;
+  }
+}
+
+.nav {
+  margin: auto;
+  display: flex;
+}
+
+@media (min-width: 1150px) {
+  .nav {
+    margin-top: 2em;
   }
 }
 
@@ -390,6 +402,11 @@ h3 small {
 
 .nav__link--active {
   color: var(--active-tab-text-color);
+}
+
+.github-container {
+  margin: 1em auto;
+  text-align: center;
 }
 
 .footer {

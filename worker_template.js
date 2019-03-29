@@ -1,9 +1,9 @@
 addEventListener('fetch', (event) => {
-  event.respondWith(handleRequest(event.request))
+  event.respondWith(handleRequest(event))
 })
 
-async function handleRequest(request) {
-  const path = new URL(request.url).pathname.substr(1)
+async function handleRequest(event) {
+  const path = new URL(event.request.url).pathname.substr(1)
 
   let status = 200
   const headers = {
@@ -39,6 +39,8 @@ async function handleRequest(request) {
     content = `404 page not found<br><a href="/">home page</a>`
   }
 
+  event.waitUntil(getGithubStars())
+
   return new Response(content, {
     status,
     headers,
@@ -68,3 +70,18 @@ const pages = {}
 __PAGES__
 
 __GENERATE_PAGE__
+
+const config = __CONFIG__
+
+let githubStars
+let githubStarsLastFetch = 0
+
+async function getGithubStars() {
+  if (+new Date - githubStarsLastFetch < 60 * 1000) {
+    return
+  }
+  githubStarsLastFetch = +new Date
+  const response = await fetch(`https://api.github.com/repos/instantpage/instant.page?client_id=${config.githubApi.client_id}&client_secret=${config.githubApi.client_secret}`, {headers: {'User-Agent': 'instantpage'}})
+  const json = await response.json()
+  githubStars = json.stargazers_count
+}

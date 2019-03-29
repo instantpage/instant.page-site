@@ -29,6 +29,7 @@ function generatePage(path) {
   footer = footer.toString().replace(new RegExp(`<a class="nav__link" href="/${path}"`), `<a class="nav__link nav__link--active" href="/${path}"`)
   footer = footer.replace(/\{\{VERSIONS_LATEST\}\}/g, versions.latest)
   footer = footer.replace(/\{\{VERSIONS_LATEST_HASH\}\}/g, versions.hashes[versions.latest])
+  footer = footer.replace(/\{\{GITHUB_STARS\}\}/, githubStars ? `${githubStars.toLocaleString()} stars` : 'Star')
   content += footer
 
   return content

@@ -4,6 +4,7 @@ const pages = require('./includes/pages')
 
 function escapeTemplateLiteral(value) {
   return value
+    .replace(/\\/g, '\\\\')
     .replace(/`/g, '\\`')
     .replace(/\$\{/g, '\\${')
 }
@@ -56,6 +57,10 @@ pagesString = pagesString.join(`\n\n`)
 worker = worker.replace('__PAGES__', pagesString)
 
 worker = worker.replace('__GENERATE_PAGE__', fs.readFileSync('./includes/generatePage.js').toString().trim())
+
+
+
+worker = worker.replace('__CONFIG__', JSON.stringify(require(fs.existsSync('./config.js') ? './config.js' : './config.sample.js')))
 
 
 
