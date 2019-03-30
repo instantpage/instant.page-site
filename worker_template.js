@@ -77,7 +77,7 @@ let githubStars
 let githubStarsLastFetch = 0
 
 async function getGithubStars() {
-  if (+new Date - githubStarsLastFetch < 60 * 1000 * 5) {
+  if (+new Date - githubStarsLastFetch < 60 * 1000 * 20) {
     return
   }
   githubStarsLastFetch = +new Date
