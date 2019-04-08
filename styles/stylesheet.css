@@ -352,14 +352,24 @@ h3 small {
 }
 
 .nav {
-  margin: auto;
-  display: flex;
+  margin-bottom: 1em;
 }
 
 @media (min-width: 1150px) {
-  .nav {
+  .nav:first-child {
     margin-top: 2em;
   }
+}
+
+.nav__title {
+  margin: 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: .75em;
+  margin-bottom: .3em;
+  letter-spacing: .05em;
+  opacity: .85;
+  text-align: center;
 }
 
 .nav__container {
@@ -405,7 +415,6 @@ h3 small {
 }
 
 .github-container {
-  margin: 1em auto;
   text-align: center;
 }
 
