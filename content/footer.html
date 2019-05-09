@@ -38,4 +38,28 @@
 <script src="/click-test.js" type="module"></script>
 <script src="/copy-code-to-clipboard.js" type="module"></script>
 <script src="/footnotes.js" type="module"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-app.js"></script>
+
+<!-- Add the standard Performance Monitoring library -->
+<script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-performance.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBJlSS6zhk-gr9AVvufu2NDRlBfx1mdn-4",
+    authDomain: "instantpage2.firebaseapp.com",
+    databaseURL: "https://instantpage2.firebaseio.com",
+    projectId: "instantpage2",
+    storageBucket: "instantpage2.appspot.com",
+    messagingSenderId: "290989189768",
+    appId: "1:290989189768:web:1c64e833412ad969"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Initialize Performance Monitoring and get a reference to the service
+  var perf = firebase.performance();
+</script>
 </_footer>
