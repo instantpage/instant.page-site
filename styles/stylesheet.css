@@ -258,6 +258,10 @@ body {
   color: inherit;
 }
 
+.content b {
+  font-weight: 500;
+}
+
 .click-test-results {
   font-size: .8em;
 }
