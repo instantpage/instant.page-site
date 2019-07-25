@@ -453,6 +453,7 @@ h3 small {
   text-shadow: 0 1px 0 hsl(203, 88%, 30%);
   box-shadow: 0 1px 1px hsla(0, 0%, 0%, .1);
   margin-left: 3px;
+  display: inline-block;
 }
 
 .twitter-follow-button:active,
