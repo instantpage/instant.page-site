@@ -421,6 +421,12 @@ h3 small {
   color: var(--active-tab-text-color);
 }
 
+.external-link-icon {
+  --size: 14px;
+  width: var(--size);
+  height: var(--size);
+}
+
 .github-container {
   text-align: center;
 }
