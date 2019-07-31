@@ -20,6 +20,12 @@
   font: 20px/1.4 system-ui, Segoe UI, sans-serif;
 }
 
+@media (MAX-width: 1149px) {
+  :root {
+    --nav-width: 208px; /* Needed for Safari on iOS in order not to return lines */
+  }
+}
+
 body {
   background-color: var(--background-color);
   overflow-y: scroll;
