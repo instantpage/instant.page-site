@@ -407,6 +407,12 @@ h2 small {
   border-top: 1px solid hsla(0, 0%, 0%, .075);
 }
 
+@media (hover: hover) {
+  .nav__link:hover {
+    background: hsla(0, 0%, 100%, .175);
+  }
+}
+
 .nav__link--active {
   color: var(--active-tab-text-color);
 }
