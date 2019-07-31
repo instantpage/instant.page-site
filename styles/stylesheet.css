@@ -418,7 +418,7 @@ h2 small {
   font-size: .625em;
   letter-spacing: .05em;
   opacity: .85;
-  padding: calc(var(--padding-y) * .75) var(--padding-x);
+  padding: .15rem var(--padding-x);
   border-top: 1px solid hsla(0, 0%, 0%, .04);
   background: hsla(0, 0%, 0%, .05);
   cursor: default;
