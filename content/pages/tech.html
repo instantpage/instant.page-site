@@ -65,34 +65,5 @@ Preloading is done with &lt;link rel=&quot;prefetch&quot; href=&quot;url&quot;&g
 
 <p>I also plan to research how this just-in-time preloading concept might fit into React/Vue/Angular, as those are popular and incompatible with InstantClick’s simplified SPA model. (I currently have no experience with those frameworks.)</p>
 
-<h2 id="changelog">Changelog</h2>
-
-<h3>1.2.2 <small>— March 16, 2019</small></h3>
-
-<p>- Don’t preload when data saver is enabled.</p>
-
-<h3>1.2.1 <small>— February 26, 2019</small></h3>
-
-<p>- Fix HTTP links not being preloaded.</p>
-
-<h3>1.2.0 <small>— February 23, 2019</small></h3>
-
-<p>
-  - Preload external urls if a <code class="code">data-instant-allow-external-links</code> attribute is present in the <code class="code">&lt;body&gt;</code>, or with a <code class="code">data-instant</code> attribute on the <code class="code">&lt;a&gt;</code> element.<br>
-  - Only preload HTTPS links, and HTTP if not on HTTPS.
-</p>
-
-<h3>1.1.1 <small>— February 23, 2019</small></h3>
-
-<p>- Fix an error on <code class="code">&lt;a&gt;</code> elements without a <code class="code">href</code> attribute.</p>
-
-<h3>1.1.0 <small>— February 10, 2019</small></h3>
-
-<p>- Add ability to whitelist a link with a <code class="code">data-instant</code> attribute.</p>
-
-<h3>1.0.0 <small>— February 7, 2019</small></h3>
-
-<p>Initial release.</p>
-
 <include>cta-widget</include>
 </_page__tech__content>

@@ -335,8 +335,8 @@ body {
   font-weight: 600;
 }
 
-h3 small {
-  font-size: 17px;
+h2 small {
+  font-size: .667em;
   font-weight: normal;
 }
 
