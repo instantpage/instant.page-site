@@ -17,7 +17,7 @@
   counter-reset: footnote;
 
   -webkit-text-size-adjust: none;
-  font: 20px/1.4 system-ui, Segoe UI, sans-serif;
+  font: 23px/1.4 system-ui, Segoe UI, sans-serif;
 }
 
 @media (MAX-width: 1149px) {
@@ -31,7 +31,7 @@ body {
   overflow-y: scroll;
   margin: 0;
 
-  --header-padding-y: 6px;
+  --header-padding-y: 8px;
   --header-logo-size: 32px;
 }
 
@@ -152,9 +152,19 @@ body {
 }
 
 @media (MAX-width: 599px) {
-  .content > .title,
-  .content > .h1--landing {
+  .content > .title {
     font-size: 1.6em;
+  }
+}
+
+.content > .h1--landing {
+  font-size: 2.3em;
+  text-align: center;
+}
+
+@media (MAX-width: 599px) {
+  .content > .h1--landing {
+    font-size: 32px;
   }
 }
 
@@ -164,13 +174,17 @@ body {
   white-space: nowrap;
 }
 
+.content > p {
+  margin: 1.15em 0;
+}
+
 .cta-widget {
-  background: hsla(0, 0%, 100%, .725);
+  background: linear-gradient(hsla(0, 0%, 100%, .775), hsla(0, 0%, 100%, .7));
   border-radius: 6px;
-  padding: 10px 15px;
-  margin: 1em 0;
-  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, .33)
-            , 0 2px 5px hsla(0, 0%, 0%, .05);
+  padding: 10px 18px;
+  margin: 1.5em 0;
+  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 1)
+            , 0 3px 20px hsla(0, 0%, 0%, .1);
 }
 
 .cta-widget__body-closing-emphasis {
@@ -184,6 +198,7 @@ body {
   padding: 0px 8px 5px;
   margin: 10px 0;
   overflow-x: auto;
+  font-size: .95em;
 }
 
 .main-code-snippet__code {
@@ -240,6 +255,7 @@ body {
               , 0 1px var(--shadow-blur-radius) hsla(0, 0%, 0%, var(--shadow-opacity)); /* An intermediate variable is needed for Safari */
   box-shadow: var(--box-shadow);
   cursor: pointer;
+  font-size: 16px;
 }
 
 .button--cta {
@@ -280,13 +296,13 @@ body {
 .content > h2 {
   font-size: 1.3em;
   font-weight: 600;
-  margin-bottom: .67em;
+  margin-top: 1.1em;
 }
 
 .content > h3 {
   font-size: 1.1em;
   font-weight: 600;
-  margin-bottom: .67em;
+  margin-top: 1.1em;
 }
 
 .content a {
@@ -298,7 +314,7 @@ body {
 }
 
 .click-test-results {
-  font-size: .8em;
+  font-size: .85em;
 }
 
 .click-test-results__delay {
@@ -469,10 +485,9 @@ h2 small {
 
 .footer {
   margin-top: 1.75rem;
-  font-size: .75em;
+  font-size: .8em;
   text-align: center;
   padding-bottom: 1rem;
-  opacity: .75;
 }
 
 @media (min-width: 1150px) {
