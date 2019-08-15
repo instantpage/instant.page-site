@@ -30,16 +30,39 @@ body {
   background-color: var(--background-color);
   overflow-y: scroll;
   margin: 0;
+
+  --header-padding-y: 6px;
+  --header-logo-size: 32px;
 }
 
 .header {
   --margin: 12px;
-  background: linear-gradient(hsla(0, 0%, 100%, .5), hsla(0, 0%, 100%, .4));
-  box-shadow: 0 1px 3px hsla(0, 0%, 0%, .033);
+  background: linear-gradient(#D1F1FF, #C8EEFF);
+  box-shadow: 0 1px 3px hsla(0, 0%, 0%, .0925);
+  position: fixed;
+  width: 100%;
+  --blur: 12px;
+  /* Backdrop-filter on a fixed element is janky on Android, so we only enable it on iOS (-webkit-backdrop-filter) and desktop. */
+}
+
+@supports (-webkit-backdrop-filter: blur(1px)) {
+  .header {
+    background: linear-gradient(hsla(0, 0%, 100%, .5), hsla(0, 0%, 100%, .4));
+    -webkit-backdrop-filter: blur(var(--blur));
+  }
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  @media (hover: hover) {
+    .header {
+      background: linear-gradient(hsla(0, 0%, 100%, .5), hsla(0, 0%, 100%, .4));
+      backdrop-filter: blur(var(--blur));
+    }
+  }
 }
 
 .header__container {
-  padding: 6px var(--page-padding);
+  padding: var(--header-padding-y) var(--page-padding);
   margin: auto;
   max-width: var(--max-width);
   display: flex;
@@ -55,9 +78,8 @@ body {
 }
 
 .header__logo-container {
-  --size: 32px;
-  width: var(--size);
-  height: var(--size);
+  width: var(--header-logo-size);
+  height: var(--header-logo-size);
   margin-right: var(--margin);
 }
 
@@ -73,6 +95,11 @@ body {
 
 .header__title-dot {
   opacity: .375;
+}
+
+.header-ghost {
+  padding: var(--header-padding-y) 0;
+  height: var(--header-logo-size);
 }
 
 .main-grid {
