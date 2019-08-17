@@ -1,0 +1,29 @@
+<_page__intensity__title>
+Intensity
+</_page__intensity__title>
+
+<_page__intensity__description>
+Alternative times to start preloading.
+</_page__intensity__description>
+
+<_page__intensity__content>
+<h1 class="title">Intensity</h1>
+
+<p>By default, instant.page preloads 65&nbsp;ms after hovering a link. You can change that.</p>
+
+<h2>Preloading when the mouse is pressed</h2>
+
+<p>To preload when the user starts pressing their mouse button, right before releasing it, add <code class="code">data-instant-intensity="mousedown"</code> as an attribute to the &lt;body&gt;.</p>
+
+<p>To only preload this way and not preload on mobile, use <code class="code">data-instant-intensity="mousedown-only"</code>.</p>
+
+<h2>Adjusting the delay on hover</h2>
+
+<p>For some sites with a lot of huge click targets, such as some e-commerce sites, the 65&nbsp;ms rule doesn’t apply: it will preload more than two times for each page visited.</p>
+
+<p>To increase the delay on hover, pass the number of milliseconds in the attribute, like so for 150&nbsp;ms: <code class="code">data-instant-intensity="150"</code>.</p>
+
+<p>Alternatively, if you don’t care about making a lot of requests, you can decrease it. Setting it at 0&nbsp;ms will make nine times as much requests than without preloading.</p>
+
+<include>cta-widget</include>
+</_page__intensity__content>
