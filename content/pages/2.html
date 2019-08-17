@@ -1,0 +1,39 @@
+<_page__2__title>
+2.0
+</_page__2__title>
+
+<_page__2__description>
+Preload pages when the user is sure to click.
+</_page__2__description>
+
+<_page__2__content>
+<h1 class="title">instant.page 2.0 — preload pages when the user is sure to click</h1>
+
+<p><a href="/">instant.page</a> makes your site’s pages instant — in 1 minute of effort — by preloading pages right before a user clicks on them: when they hover over a link for 65&nbsp;ms; there’s one chance out of two that they will click then. On mobile, it preloads when they start touching their display, before releasing it.</p>
+
+<h2>Preloading when the mouse is pressed</h2>
+
+<p>Version 2.0 introduces a new option: preloading when they start pressing their mouse (mousedown), right before they release it.</p>
+
+<p>This makes pages load on average 80&nbsp;ms faster <b>with virtually zero unused requests</b>.</p>
+
+<p>To enable it on your site:</p>
+
+<include>cta-widget</include>
+
+<p>Then add <code class="code">data-instant-intensity="mousedown"</code> as an attribute to the &lt;body&gt;. If you want to preload only on PC and not on mobile on touchstart, use <code class="code">data-instant-intensity="mousedown-only"</code>.</p>
+
+<h2>Adjusting the delay to start preloading on hover</h2>
+
+<p>Another option in 2.0: set a custom delay before preloading on hover. It’s useful to increase the delay on some sites with a lot of huge click targets (like some e-commerce sites) where the 65&nbsp;ms rule doesn’t apply. Or you can reduce it if you don’t care about making a lot of requests.</p>
+
+<p>Just pass the number of milliseconds to wait in the attribute, like so for 150&nbsp;ms: <code class="code">data-instant-intensity="150"</code>.</p>
+
+<h2>Conclusion</h2>
+
+<p>100&nbsp;ms of reduced wait can increase your conversion rate by 1% (see the footnote on the <a href="/">home page</a>), so any speed improvement is good to take.</p>
+
+<p>There was little reason not to use instant.page before, there is even less now.</p>
+
+<include>cta-widget</include>
+</_page__2__content>
