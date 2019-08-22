@@ -16,6 +16,8 @@ async function handleRequest(event) {
     headers['Access-Control-Allow-Origin'] = '*'
     headers['Cache-Control'] = 'max-age=' + (60 * 60 * 24 * 30)
     content = versions.content[path]
+
+    event.waitUntil(logRequest(event.request, path))
   }
   else if (path in scripts) {
     headers['Content-Type'] = 'text/javascript'
@@ -84,4 +86,14 @@ async function getGithubStars() {
   const response = await fetch(`https://api.github.com/repos/instantpage/instant.page?${config.githubAuthParam}`, {headers: {'User-Agent': 'instantpage'}})
   const json = await response.json()
   githubStars = json.stargazers_count
+}
+
+async function logRequest(request, version) {
+  const key = encodeURIComponent(config.serversidestatsKey)
+  const method = encodeURIComponent(request.method)
+  const host = encodeURIComponent(request.headers.get("referer") && new URL(request.headers.get("referer")).host || '')
+  const userAgent = encodeURIComponent(request.headers.get("user-agent"))
+  const country = encodeURIComponent(request.headers.get("cf-ipcountry"))
+
+  await fetch(`https://serversidestats.instant.page/?key=${key}&method=${method}&host=${host}&userAgent=${userAgent}&country=${country}&version=${version}`)
 }
