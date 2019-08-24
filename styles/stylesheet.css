@@ -278,6 +278,12 @@ body {
   justify-content: center;
 }
 
+.social-proof__item-main--more {
+  padding-right: calc(var(--height) / 5);
+  font-size: .85em;
+  text-align: center;
+}
+
 .social-proof__item-main-img {
   max-width: var(--width);
   max-height: var(--height);
