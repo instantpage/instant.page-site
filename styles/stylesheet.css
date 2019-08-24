@@ -287,11 +287,13 @@ body {
 .social-proof__item-main-img {
   max-width: var(--width);
   max-height: var(--height);
-  filter: grayscale(1)
+  filter: grayscale(1);
+  opacity: .33;
 }
 
 .social-proof:hover .social-proof__item-main-img {
   filter: none;
+  opacity: 1;
 }
 
 .button {
