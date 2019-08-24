@@ -271,16 +271,16 @@ body {
 }
 
 .button--github {
-  font-size: 16px;
+  --size: .75rem;
+  font-size: var(--size);
   text-decoration: none;
   border-radius: 6px;
   color: inherit;
-  padding: 2px 7px;
+  padding: 1px 7px 2px;
   box-shadow: none;
 }
 
 .button__github-logo {
-  --size: 16px;
   width: var(--size);
   height: var(--size);
   vertical-align: middle;
