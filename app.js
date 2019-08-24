@@ -6,6 +6,8 @@ const versions = require('./includes/versions')
 
 const pages = require('./includes/pages')
 
+const assets = require('./includes/assets')
+
 const stylesheet = fs.readFileSync('styles/stylesheet.css').toString().trim()
 
 eval(fs.readFileSync('./includes/generatePage.js').toString())
@@ -13,6 +15,14 @@ eval(fs.readFileSync('./includes/generatePage.js').toString())
 const config = require(fs.existsSync('./config.js') ? './config.js' : './config.sample.js')
 
 let githubStars
+
+const imageMimeTypes = {
+  'png': 'image/png',
+  'svg': 'image/svg+xml',
+  'jpg': 'image/jpeg',
+  'gif': 'image/gif',
+  'ico': 'image/png', // We serve the favicon as a PNG
+}
 
 async function requestListener(req, res) {
   const path = req.url.split('?')[0].substr(1)
@@ -53,6 +63,11 @@ async function requestListener(req, res) {
   else if (['favicon.ico', 'twitter_summary_image_v2.png'].includes(path)) {
     headers['Content-Type'] = 'image/png'
     content = await fs.promises.readFile(`images/${path}`)
+  }
+  else if (/\.(png|svg|jpg|gif|ico)$/.test(path)) {
+    const extension = path.substr(path.lastIndexOf('.') + 1)
+    headers['Content-Type'] = imageMimeTypes[extension]
+    content = await fs.promises.readFile(`assets/${path}`)
   }
   else {
     status = 404
