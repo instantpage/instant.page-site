@@ -36,6 +36,10 @@ async function handleRequest(event) {
     headers['Content-Type'] = 'image/png'
     content = (await fetch('https://image.noelshack.com/fichiers/2019/06/3/1549480323-twitter-summary-image.png')).body
   }
+  else if (/\.(png|svg|jpg|gif|ico)$/.test(path)) {
+    const response = await fetch(`https://assets.instant.page/${path}`)
+    return response
+  }
   else {
     status = 404
     content = `404 page not found<br><a href="/">home page</a>`
