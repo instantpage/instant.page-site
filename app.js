@@ -16,7 +16,7 @@ const config = require(fs.existsSync('./config.js') ? './config.js' : './config.
 
 let githubStars
 
-const imageMimeTypes = {
+const assetMimeTypes = {
   'png': 'image/png',
   'svg': 'image/svg+xml',
   'jpg': 'image/jpeg',
@@ -66,7 +66,7 @@ async function requestListener(req, res) {
   }
   else if (/\.(png|svg|jpg|gif|ico)$/.test(path)) {
     const extension = path.substr(path.lastIndexOf('.') + 1)
-    headers['Content-Type'] = imageMimeTypes[extension]
+    headers['Content-Type'] = assetMimeTypes[extension]
     content = await fs.promises.readFile(`assets/${path}`)
   }
   else {
