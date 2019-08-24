@@ -50,7 +50,7 @@ worker = worker.replace(`__STYLESHEET__`, `\`${escapeTemplateLiteral(stylesheet)
 
 let pagesString = []
 for (let pageKey in pages) {
-  const pageValue = pages[pageKey]
+  const pageValue = pages[pageKey].replace('src="/trusted-by/', 'src="https://assets.instant.page/trusted-by/')
   pagesString.push(`pages['${pageKey}'] = \`${escapeTemplateLiteral(pageValue)}\``)
 }
 pagesString = pagesString.join(`\n\n`)
