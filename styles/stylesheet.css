@@ -37,6 +37,7 @@ body {
   width: 100%;
   --blur: 12px;
   /* Backdrop-filter on a fixed element is janky on Android, so we only enable it on iOS (-webkit-backdrop-filter) and desktop. */
+  z-index: 1; /* Over social proof’s filter */
 }
 
 @supports (-webkit-backdrop-filter: blur(1px)) {
@@ -232,6 +233,59 @@ body {
 
 .cta__widget__copied-cta--displayed {
   display: block;
+}
+
+.social-proof {
+  margin: 1.5em 0;
+  background: hsla(0, 0%, 100%, .33);
+  border-radius: 4px;
+  overflow-x: scroll;
+}
+
+.social-proof__title {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: .8em;
+  margin: 0;
+  text-indent: 10px;
+  opacity: .875;
+}
+
+.social-proof__grid {
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.social-proof__item {
+  --width: 112px;
+  --height: 75px;
+  text-decoration: none;
+  margin-left: calc(var(--height) / 5);
+}
+
+@media (MAX-width: 599px) {
+  .social-proof__item {
+    --width: 75px;
+    --height: 50px;
+  }
+}
+
+.social-proof__item-main {
+  width: var(--width);
+  height: var(--height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-proof__item-main-img {
+  max-width: var(--width);
+  max-height: var(--height);
+  filter: grayscale(1)
+}
+
+.social-proof:hover .social-proof__item-main-img {
+  filter: none;
 }
 
 .button {
