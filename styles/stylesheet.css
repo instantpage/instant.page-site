@@ -284,6 +284,12 @@ body {
   text-align: center;
 }
 
+@media (MAX-width: 599px) {
+  .social-proof__item-main--more {
+    font-size: .65em;
+  }
+}
+
 .social-proof__item-main-img {
   max-width: var(--width);
   max-height: var(--height);
