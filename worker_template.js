@@ -98,6 +98,7 @@ async function logRequest(request, version) {
   const host = encodeURIComponent(request.headers.get("referer") && new URL(request.headers.get("referer")).host || '')
   const userAgent = encodeURIComponent(request.headers.get("user-agent"))
   const country = encodeURIComponent(request.headers.get("cf-ipcountry"))
+  const protocol = new URL(request.url).protocol
 
-  await fetch(`https://serversidestats.instant.page/?key=${key}&method=${method}&host=${host}&userAgent=${userAgent}&country=${country}&version=${version}`)
+  await fetch(`https://serversidestats.instant.page/?key=${key}&method=${method}&protocol=${protocol}&host=${host}&versionNumber=${version}&userAgent=${userAgent}&country=${country}`)
 }
