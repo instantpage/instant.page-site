@@ -37,5 +37,13 @@ Pages with a query string (a “?”) in their URL aren’t preloaded by default
 
 <p>If you’d like to only preload specific links, add a <code class="code">data-instant-whitelist</code> to the &lt;body&gt; and mark links to preload by adding a <code class="code">data-instant</code> attribute to them.</p>
 
+<h2 id="content-blockers">Content blockers</h2>
+
+<p>For <a href="https://github.com/easylist/easylist/issues/4023" target="_blank">dubious reasons</a> prefetching is considered a privacy violation by some content blockers such as uBlock Origin. Be sure to disable your content blocker on your site to see the preloading requests being made.</p>
+
+<p>uBlock Origin in Firefox totally disables prefetching; if you use it you need to temporarily completely disable the extension, not just turn it off for your site.</p>
+
+ <p>This only affects users of content blocker that use the EasyPrivacy list. It works fine with AdBlock; and users of uBlock Origin are a minority. If you’d like to make instant.page work for users of your site that have a privacy content blocker you can <a href="/tech#self-hosting">self-host the script</a>.</p>
+
 <include>cta-widget</include>
 </_page__blacklist__content>
