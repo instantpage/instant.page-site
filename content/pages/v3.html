@@ -1,0 +1,43 @@
+<_page__v3__title>
+3.0
+</_page__v3__title>
+
+<_page__v3__description>
+Incorporating the best from quicklink.
+</_page__v3__description>
+
+<_page__v3__content>
+<h1 class="title">instant.page 3.0 — incorporating the best from quicklink</h1>
+
+<h2>Introduction</h2>
+
+<p><a href="/">instant.page</a> makes your site’s pages instant — in 1 minute of effort — by preloading pages right before a user clicks on them: when they hover over a link for 65&nbsp;ms; there’s one chance out of two that they will click then. On mobile, it preloads when they start touching their display, before releasing it.</p>
+
+<p><a href="https://github.com/GoogleChromeLabs/quicklink" target="_blank">quicklink</a> from Google makes your site’s pages instant by preloading every link the user sees. This is heavy in terms of resources.</p>
+
+<h2>Different strengths</h2>
+
+<p>On desktop, instant.page’s mechanism is enough to make pages instant the vast majority of the time, but on mobile on good 3G it merely <em>feels</em> instant — because the brain perceive any action taking less than 100&nbsp;ms as instant — but it’s not totally instant. And it only feels instant on <em>good</em> 3G if your pages are fast to render.</p>
+
+<p>quicklink on mobile is great, as it makes links be truly instant (minus rendering time). On desktop, not so great, as it makes an enormous amount of requests because the viewport is so large — while preloading on hover would do the job nearly just as well.</p>
+
+<h2>The best of both worlds</h2>
+
+<p>instant.page 3.0 combines the best of both worlds, as it preloads on hover on desktop and has a new option to preload every visible links on mobile, where there are fewer links visible and where it makes the most impact.</p>
+
+<p>Enable instant.page 3.0 on your site in 1 minute:</p>
+
+<include>cta-widget</include>
+
+<p>Then add <code class="code">data-instant-intensity="viewport"</code> as an attribute to the &lt;body&gt;. You now have truly instant pages (minus rendering time) on every device, while making a great deal less requests than quicklink would do.</p>
+
+<h2>Mimicking quicklink entirely, with a bonus</h2>
+
+<p>If you don’t mind making a lot of requests, you can enable viewport preloading on desktop and tablets as well with <code class="code">data-instant-intensity="viewport-all"</code>. This mimics quicklink’s behavior, with the added advantage that it will fall back to instant.page’s default preloading mechanism if the observation of all links on the page hasn’t kicked in yet (both quicklink and instant.page use requestIdleCallback to defer that to when your page is idle) or if the user has enabled data saver or is on 2G.</p>
+
+<p>Make your users enjoy the best of both worlds. Or just use instant.page’s default options, that’s pretty fast too.</p>
+
+<include>social-proof-widget</include>
+
+<include>cta-widget</include>
+</_page__v3__content>
