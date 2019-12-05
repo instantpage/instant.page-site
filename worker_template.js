@@ -17,7 +17,9 @@ async function handleRequest(event) {
     headers['Cache-Control'] = 'max-age=' + (60 * 60 * 24 * 30)
     content = versions.content[path]
 
-    event.waitUntil(logRequest(event.request, path))
+    if (Math.random() <= 0.1) {
+      event.waitUntil(logRequest(event.request, path))
+    }
   }
   else if (path in scripts) {
     headers['Content-Type'] = 'text/javascript'
