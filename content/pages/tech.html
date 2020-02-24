@@ -35,7 +35,7 @@ Preloading is done with &lt;link rel=&quot;prefetch&quot; href=&quot;url&quot;&g
   <p>Cloudflare provided me with free Workers in order to be able to securely serve the script to a very large number of people.</p>
 </div>
 
-<p>Additionally, it uses <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity">subresource integrity</a> to let modern browsers verify that the file hasn’t been tampered with. It’s loaded as a module so that most old browsers won’t execute it. <span class="footnote-button"></span></p>
+<p>Additionally, it uses <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity" target="_blank">subresource integrity</a> to let modern browsers verify that the file hasn’t been tampered with. It’s loaded as a module so that most old browsers won’t execute it. <span class="footnote-button"></span></p>
 
 <div class="footnote-content">
   <p>The only browser versions that implement modules without implementing subresource integrity are Edge 16, Safari 10.1 and Safari 11.0. They account for 0.5% of page views.</p>
@@ -51,15 +51,15 @@ Preloading is done with &lt;link rel=&quot;prefetch&quot; href=&quot;url&quot;&g
 
 <h2 id="history">History</h2>
 
-<p>The idea of preloading web pages on hover and touchstart comes from an older library of mine, <a href="http://instantclick.io/">InstantClick</a>, which uses Ajax and <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API">history.pushState</a> instead of &lt;link rel="prefetch"&gt;, transforming a site into a single-page application. It makes a site even smoother but requires additional work.</p>
+<p>The idea of preloading web pages on hover and touchstart comes from an older library of mine, <a href="http://instantclick.io/" target="_blank">InstantClick</a>, launched in January 2014, which uses Ajax and <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API" target="_blank">history.pushState</a> instead of &lt;link rel="prefetch"&gt;, transforming a site into a single-page application. It makes a site even smoother but requires additional work.</p>
 
 <p>InstantClick is unfortunately mostly just a proof of concept as it doesn’t have good documentation.</p>
 
-<p>Google’s recent release of <a href="https://github.com/GoogleChromeLabs/quicklink">quicklink</a>, which preloads links with &lt;link rel="prefetch"&gt; as soon as they are shown, made it clear that I should focus on building a “lite”, easier to use version of InstantClick, which is instant.page.</p>
+<p>Google’s release of <a href="https://github.com/GoogleChromeLabs/quicklink" target="_blank">quicklink</a> in December 2018, which preloads links with &lt;link rel="prefetch"&gt; as soon as they are shown, made it clear that I should focus on building a “lite”, easier to use version of InstantClick, which is instant.page, launched in February 2019.</p>
 
 <h2 id="future-projects">Future related project</h2>
 
-<p>InstantClick provides one of the smoothest experiences possible, while still not requiring as much work as a framework (who give lesser results), so I’m considering working on it again later on.</p>
+<p>InstantClick provides the smoothest experience possible, while still not requiring as much work as a framework (who give lesser results), so I’m considering working on it again later in 2020. It will be renamed to “instant.page extra”.</p>
 
 <include>cta-widget</include>
 </_page__tech__content>
