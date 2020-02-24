@@ -595,9 +595,9 @@ h2 small {
     top: 75px;
     left: var(--offset);
     block-size: var(--size);
-    opacity: .1;
-    filter: grayscale(.4);
+    opacity: .5;
     border-radius: 999px;
+    transition: all .5s;
   }
 }
 
@@ -606,4 +606,9 @@ h2 small {
     --size: 500px;
     --offset: -30px;
   }
+}
+
+.floating-logo--page-scrolled {
+  opacity: .05;
+  filter: grayscale(.4);
 }
