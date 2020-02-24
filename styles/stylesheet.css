@@ -581,3 +581,29 @@ h2 small {
   top: 2px;
   filter: drop-shadow(0 1px 0 hsl(203, 88%, 30%));
 }
+
+.floating-logo {
+  display: none;
+}
+
+@media (min-width: 1550px) {
+  .floating-logo {
+    --size: 400px;
+    --offset: -45px;
+    display: block;
+    position: fixed;
+    top: 75px;
+    left: var(--offset);
+    block-size: var(--size);
+    opacity: .1;
+    filter: grayscale(.4);
+    border-radius: 999px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .floating-logo {
+    --size: 500px;
+    --offset: -30px;
+  }
+}
