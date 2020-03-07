@@ -360,6 +360,15 @@ body {
   margin-top: 1.1em;
 }
 
+.content > h1,
+.content > h2,
+.content > h3,
+.content > h4,
+.content > h5,
+.content > h6 {
+  scroll-margin-top: 55px;
+}
+
 .content a {
   color: inherit;
 }
