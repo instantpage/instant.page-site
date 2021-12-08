@@ -1,4 +1,4 @@
 module.exports = {
-  githubAuthParam: 'access_token=',
+  githubAccessToken: '',
   serversidestatsKey: '',
 }

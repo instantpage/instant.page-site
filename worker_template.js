@@ -89,7 +89,12 @@ async function getGithubStars() {
     return
   }
   githubStarsLastFetch = +new Date
-  const response = await fetch(`https://api.github.com/repos/instantpage/instant.page?${config.githubAuthParam}`, {headers: {'User-Agent': 'instantpage'}})
+  const response = await fetch(`https://api.github.com/repos/instantpage/instant.page`, {
+    headers: {
+      'User-Agent': 'instantpage',
+      'Authorization': `token ${config.githubAccessToken}`,
+    }
+  })
   const json = await response.json()
   githubStars = json.stargazers_count
 }

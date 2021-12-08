@@ -49,7 +49,12 @@ async function requestListener(req, res) {
     content = generatePage(path)
 
     if (!githubStars) {
-      https.get(`https://api.github.com/repos/instantpage/instant.page?${config.githubAuthParam}`, {headers: {'User-Agent': 'instantpage'}}, (res) => {
+      https.get(`https://api.github.com/repos/instantpage/instant.page`, {
+        headers: {
+          'User-Agent': 'instantpage',
+          'Authorization': `token ${config.githubAccessToken}`,
+        }
+      }, (res) => {
         let data = ''
         res.on('data', (chunk) => {
           data += chunk
