@@ -107,5 +107,5 @@ async function logRequest(request, version) {
   const country = encodeURIComponent(request.headers.get("cf-ipcountry"))
   const protocol = new URL(request.url).protocol
 
-  await fetch(`https://serversidestats.instant.page/?key=${key}&method=${method}&protocol=${protocol}&host=${host}&versionNumber=${version}&userAgent=${userAgent}&country=${country}`)
+  await fetch(`https://cdnstats.instant.page/?key=${key}&method=${method}&protocol=${protocol}&host=${host}&versionNumber=${version}&userAgent=${userAgent}&country=${country}`)
 }
