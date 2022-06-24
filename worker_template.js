@@ -17,7 +17,7 @@ async function handleRequest(event) {
     headers['Cache-Control'] = 'max-age=' + (60 * 60 * 24 * 30)
     content = versions.content[path]
 
-    if (Math.random() <= 0.1) {
+    if (Math.random() <= config.logRequestRate) {
       event.waitUntil(logRequest(event.request, path))
     }
   }
