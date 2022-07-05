@@ -32,11 +32,11 @@ async function handleRequest(event) {
   }
   else if (path == 'favicon.ico') {
     headers['Content-Type'] = 'image/png'
-    content = (await fetch('https://image.noelshack.com/fichiers/2019/04/2/1548173989-favicon.png')).body
+    content = (await fetch('https://cdnstats.instant.page/favicon.ico')).body
   }
   else if (path == 'twitter_summary_image_v2.png') {
     headers['Content-Type'] = 'image/png'
-    content = (await fetch('https://image.noelshack.com/fichiers/2019/06/3/1549480323-twitter-summary-image.png')).body
+    content = (await fetch('https://cdnstats.instant.page/twitter_summary_image_v2.png')).body
   }
   else if (/\.(png|svg|jpg|gif|ico)$/.test(path)) {
     const response = await fetch(`https://assets.instant.page/${path}`)
