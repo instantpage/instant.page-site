@@ -39,7 +39,7 @@ function generateWithIncludes(key) {
   let content = pages[key]
   content = content.replace(/\{\{VERSIONS_LATEST\}\}/g, versions.latest)
   content = content.replace(/\{\{VERSIONS_LATEST_HASH\}\}/g, versions.hashes[versions.latest])
-  content = content.replace(/<include>([^<]+)<\/include>/g, (match, includeKey) => {
+  content = content.replace(/<(?:x-)?include>([^<]+)<\/(?:x-)?include>/g, (match, includeKey) => {
     let includeContent = generateWithIncludes(includeKey)
     return includeContent
   })
