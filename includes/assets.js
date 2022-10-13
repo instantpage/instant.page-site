@@ -1,5 +1,5 @@
-const fs = require('fs')
-const crypto = require('crypto')
+import fs from 'node:fs'
+import crypto from 'node:crypto'
 
 const assets = {}
 
@@ -26,4 +26,4 @@ function getContentDir(path) {
 
 getContentDir(`assets`)
 
-module.exports = assets
+export default assets

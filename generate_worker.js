@@ -1,6 +1,8 @@
-const fs = require('fs')
+import fs from 'node:fs'
 
-const pages = require('./includes/pages')
+import pages from './includes/pages.js'
+import versions from './includes/versions.js'
+import {pagePath, generatePage, generateWithIncludes} from './includes/generatePage.js'
 
 function escapeTemplateLiteral(value) {
   return value
@@ -10,10 +12,6 @@ function escapeTemplateLiteral(value) {
 }
 
 let worker = fs.readFileSync('worker_template.js').toString()
-
-
-
-const versions = require('./includes/versions')
 
 worker = worker.replace('__VERSIONS_LATEST__', `\`${versions.latest}\``)
 
@@ -56,11 +54,19 @@ for (let pageKey in pages) {
 pagesString = pagesString.join(`\n\n`)
 worker = worker.replace('__PAGES__', pagesString)
 
-worker = worker.replace('__GENERATE_PAGE__', fs.readFileSync('./includes/generatePage.js').toString().trim())
+const generatePageFunctionsString = [pagePath.toString(), generatePage.toString(), generateWithIncludes.toString()].join('\n\n')
+worker = worker.replace('__GENERATE_PAGE__', generatePageFunctionsString)
 
 
-
-worker = worker.replace('__CONFIG__', JSON.stringify(require(fs.existsSync('./config.js') ? './config.js' : './config.sample.js')))
+let configPath
+if (fs.existsSync('./config.json')) {
+  configPath = './config.json'
+}
+else {
+  configPath = './config.sample.json'
+}
+const config = fs.readFileSync(configPath, {encoding: 'utf-8'})
+worker = worker.replace('__CONFIG__', config)
 
 
 

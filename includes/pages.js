@@ -1,4 +1,4 @@
-const fs = require('fs')
+import fs from 'node:fs'
 
 const pages = {}
 
@@ -43,4 +43,4 @@ function getContentDir(path) {
 
 getContentDir(`content`)
 
-module.exports = pages
+export default pages

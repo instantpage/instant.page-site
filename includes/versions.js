@@ -1,5 +1,5 @@
-const crypto = require('crypto')
-const fs = require('fs')
+import crypto from 'node:crypto'
+import fs from 'node:fs'
 
 function cdnDirCompareFunction(a, b) {
   const a_ = parseInt(a.replace(/\./g, ''))
@@ -28,7 +28,7 @@ cdnDir.forEach((file) => {
   hashes[version] = sha384(content[version])
 })
 
-module.exports = {
+export default {
   content,
   hashes,
   latest,

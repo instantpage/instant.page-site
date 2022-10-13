@@ -1,11 +1,30 @@
-function pagePath(path) {
+import fs from 'node:fs'
+import https from 'node:https'
+
+import versions from './versions.js'
+import pages from './pages.js'
+
+const stylesheet = fs.readFileSync('styles/stylesheet.css').toString().trim()
+
+let configPath
+if (fs.existsSync('../config.json')) {
+  configPath = '../config.json'
+}
+else {
+  configPath = '../config.sample.json'
+}
+const config = await import(configPath, {assert: {type: 'json'}})
+
+let githubStars
+
+export function pagePath(path) {
   if (path == '') {
     return 'index'
   }
   return path
 }
 
-function generatePage(path) {
+export function generatePage(path) {
   const pagePath_ = pagePath(path)
   let content = ''
 
@@ -35,7 +54,7 @@ function generatePage(path) {
   return content
 }
 
-function generateWithIncludes(key) {
+export function generateWithIncludes(key) {
   let content = pages[key]
   content = content.replace(/\{\{VERSIONS_LATEST\}\}/g, versions.latest)
   content = content.replace(/\{\{VERSIONS_LATEST_HASH\}\}/g, versions.hashes[versions.latest])
@@ -44,4 +63,21 @@ function generateWithIncludes(key) {
     return includeContent
   })
   return content
+}
+
+export function fetchGithubStars() {
+  https.get(`https://api.github.com/repos/instantpage/instant.page`, {
+    headers: {
+      'User-Agent': 'instantpage',
+      'Authorization': `token ${config.githubAccessToken}`,
+    }
+  }, (res) => {
+    let data = ''
+    res.on('data', (chunk) => {
+      data += chunk
+    })
+    res.on('end', () => {
+      githubStars = JSON.parse(data).stargazers_count
+    })
+  })
 }

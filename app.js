@@ -1,20 +1,21 @@
-const http = require('http')
-const https = require('https')
-const fs = require('fs')
+import http from 'node:http'
+import fs from 'node:fs'
 
-const versions = require('./includes/versions')
+import versions from './includes/versions.js'
+import pages from './includes/pages.js'
+import assets from './includes/assets.js'
+import {pagePath, generatePage, fetchGithubStars} from './includes/generatePage.js'
 
-const pages = require('./includes/pages')
+let configPath
+if (fs.existsSync('./config.json')) {
+  configPath = './config.json'
+}
+else {
+  configPath = './config.sample.json'
+}
+const config = await import(configPath, {assert: {type: 'json'}})
 
-const assets = require('./includes/assets')
-
-const stylesheet = fs.readFileSync('styles/stylesheet.css').toString().trim()
-
-eval(fs.readFileSync('./includes/generatePage.js').toString())
-
-const config = require(fs.existsSync('./config.js') ? './config.js' : './config.sample.js')
-
-let githubStars
+let githubStarsFetched
 
 const assetMimeTypes = {
   'png': 'image/png',
@@ -48,21 +49,8 @@ async function requestListener(req, res) {
     //headers['Cache-Control'] = 'max-age=5'
     content = generatePage(path)
 
-    if (!githubStars) {
-      https.get(`https://api.github.com/repos/instantpage/instant.page`, {
-        headers: {
-          'User-Agent': 'instantpage',
-          'Authorization': `token ${config.githubAccessToken}`,
-        }
-      }, (res) => {
-        let data = ''
-        res.on('data', (chunk) => {
-          data += chunk
-        })
-        res.on('end', () => {
-          githubStars = JSON.parse(data).stargazers_count
-        })
-      })
+    if (!githubStarsFetched) {
+      githubStarsFetched = fetchGithubStars()
     }
   }
   else if (['favicon.ico', 'twitter_summary_image_v2.png'].includes(path)) {
