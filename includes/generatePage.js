@@ -69,7 +69,7 @@ export function fetchGithubStars() {
   https.get(`https://api.github.com/repos/instantpage/instant.page`, {
     headers: {
       'User-Agent': 'instantpage',
-      'Authorization': `token ${config.githubAccessToken}`,
+      'Authorization': `Bearer ${config.githubAccessToken}`,
     }
   }, (res) => {
     let data = ''

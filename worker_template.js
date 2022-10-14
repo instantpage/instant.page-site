@@ -92,7 +92,7 @@ async function getGithubStars() {
   const response = await fetch(`https://api.github.com/repos/instantpage/instant.page`, {
     headers: {
       'User-Agent': 'instantpage',
-      'Authorization': `token ${config.githubAccessToken}`,
+      'Authorization': `Bearer ${config.githubAccessToken}`,
     }
   })
   const json = await response.json()
