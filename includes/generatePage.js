@@ -7,13 +7,13 @@ import pages from './pages.js'
 const stylesheet = fs.readFileSync('styles/stylesheet.css').toString().trim()
 
 let configPath
-if (fs.existsSync('../config.json')) {
+if (fs.existsSync(new URL('../config.json', import.meta.url))) {
   configPath = '../config.json'
 }
 else {
   configPath = '../config.sample.json'
 }
-const config = await import(configPath, {assert: {type: 'json'}})
+const config = (await import(configPath, {assert: {type: 'json'}})).default
 
 let githubStars
 
