@@ -80,4 +80,6 @@ export function fetchGithubStars() {
       githubStars = JSON.parse(data).stargazers_count
     })
   })
+
+  return true
 }
