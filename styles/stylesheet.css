@@ -45,25 +45,7 @@ body {
   box-shadow: 0 1px 3px hsla(0, 0%, 0%, .0925);
   position: fixed;
   width: 100%;
-  --blur: 12px;
-  /* Backdrop-filter on a fixed element is janky on Android, so we only enable it on iOS (-webkit-backdrop-filter) and desktop. */
-  z-index: 1; /* Over social proof’s filter */
-}
-
-@supports (-webkit-backdrop-filter: blur(1px)) {
-  .header {
-    background: linear-gradient(hsla(0, 0%, 100%, .5), hsla(0, 0%, 100%, .4));
-    -webkit-backdrop-filter: blur(var(--blur));
-  }
-}
-
-@supports (backdrop-filter: blur(1px)) {
-  @media (hover: hover) {
-    .header {
-      background: linear-gradient(hsla(0, 0%, 100%, .5), hsla(0, 0%, 100%, .4));
-      backdrop-filter: blur(var(--blur));
-    }
-  }
+  z-index: 1; /* .social-proof__title’s opacity makes it go above otherwise */
 }
 
 .header__container {
