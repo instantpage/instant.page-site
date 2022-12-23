@@ -228,7 +228,9 @@ main > p {
 }
 
 .social-proof {
+  display: flex;
   margin: 1.5em 0;
+  flex-direction: column;
   background: hsla(0, 0%, 100%, .33);
   border-radius: 4px;
 }
