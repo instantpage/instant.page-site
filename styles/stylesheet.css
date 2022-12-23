@@ -1,9 +1,17 @@
 :root {
   --background-color: hsl(199, 100%, 82%);
   --main-color: #e03;
-  --text-color: hsl(226, 52%, 27%);
+  --text-color: hsl(226 52% 27%);
   --active-tab-text-color: hsla(226, 52%, 27%, .7);
+}
 
+@supports (color: oklch(0% 0 0)) {
+  :root {
+    --text-color: oklch(33.48% .1 268);
+  }
+}
+
+:root {
   --max-width: 820px;
   --page-padding: 12px;
   --nav-width: 235px;
