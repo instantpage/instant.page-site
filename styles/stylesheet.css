@@ -45,7 +45,7 @@ body > header {
   box-shadow: 0 1px 3px hsla(0, 0%, 0%, .0925);
   position: fixed;
   width: 100%;
-  z-index: 1; /* .social-proof__title’s opacity makes it go above otherwise */
+  z-index: 1; /* .social-proof>h2 goes above otherwise due to its opacity */
 }
 
 body > header > a {
@@ -231,10 +231,9 @@ body > header > a > h1 > span {
   margin: 1.5em 0;
   background: hsla(0, 0%, 100%, .33);
   border-radius: 4px;
-  overflow-x: scroll;
 }
 
-.social-proof__title {
+.social-proof > h2 {
   font-weight: 600;
   text-transform: uppercase;
   font-size: .8em;
@@ -243,48 +242,45 @@ body > header > a > h1 > span {
   opacity: .875;
 }
 
-.social-proof__grid {
-  display: flex;
-  margin-bottom: 1em;
-}
-
-.social-proof__item {
+.social-proof > .grid {
   --width: 112px;
   --height: 75px;
-  text-decoration: none;
-  margin-left: calc(var(--height) / 5);
+
+  display: flex;
+  overflow-x: scroll;
+
+  padding-inline: calc(var(--height) / 5);
+  padding-block-end: 1em;
+  gap: calc(var(--height) / 5);
+  align-items: center;
 }
 
 @media (MAX-width: 599px) {
-  .social-proof__item {
+  .social-proof > .grid {
     --width: 75px;
     --height: 50px;
   }
 }
 
-.social-proof__item-main {
-  width: var(--width);
-  height: var(--height);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.social-proof > .grid > img {
+  max-inline-size: var(--width);
+  max-block-size: var(--height);
+  object-fit: contain;
 }
 
-.social-proof__item-main--more {
-  padding-right: calc(var(--height) / 5);
+.social-proof > .grid > span {
   font-size: .85em;
   text-align: center;
 }
 
 @media (MAX-width: 599px) {
-  .social-proof__item-main--more {
-    font-size: .65em;
+  .social-proof > .grid > span {
+    font-size: .7em;
   }
 }
 
-.social-proof__item-main-img {
-  max-width: var(--width);
-  max-height: var(--height);
+.social-proof > .grid > span > .nowrap {
+  white-space: nowrap;
 }
 
 .button {
