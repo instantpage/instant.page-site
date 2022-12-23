@@ -39,7 +39,7 @@ body {
   --header-logo-size: 32px;
 }
 
-.header {
+body > header {
   --margin: 12px;
   background: linear-gradient(#D1F1FF, #C8EEFF);
   box-shadow: 0 1px 3px hsla(0, 0%, 0%, .0925);
@@ -48,7 +48,7 @@ body {
   z-index: 1; /* .social-proof__title’s opacity makes it go above otherwise */
 }
 
-.header__container {
+body > header > a {
   padding: var(--header-padding-y) var(--page-padding);
   margin: auto;
   max-width: var(--max-width);
@@ -58,19 +58,19 @@ body {
 }
 
 @media (min-width: 1250px) and (MAX-width: 1549px) {
-  .header__container {
+  body > header > a {
     max-width: var(--two-columns-width);
     box-sizing: border-box;
   }
 }
 
-.header__logo-container {
+body > header > a > div/*:has(svg)*/ {
   width: var(--header-logo-size);
   height: var(--header-logo-size);
   margin-right: var(--margin);
 }
 
-.header__title {
+body > header > a > h1 {
   margin: 0;
   font-weight: 600;
   letter-spacing: .01em;
@@ -80,7 +80,7 @@ body {
   margin-bottom: 4px;
 }
 
-.header__title-dot {
+body > header > a > h1 > span {
   opacity: .375;
 }
 
