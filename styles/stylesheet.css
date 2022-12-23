@@ -22,7 +22,7 @@
   --side-column-width: calc(var(--nav-width));
   --two-columns-width: calc(var(--max-width) + var(--page-padding) * 2 + var(--grid-gap) + var(--nav-width));
   --three-columns-width: calc(var(--nav-width) + var(--grid-gap) + var(--two-columns-width));
-  --code-fonts: Consolas, monospace;
+  --code-fonts: ui-monospace, Consolas, monospace;
 
   counter-reset: footnote;
 
