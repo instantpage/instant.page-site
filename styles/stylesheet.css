@@ -547,7 +547,7 @@ h2 small {
   text-align: center;
 }
 
-.footer {
+body > footer {
   margin-top: 1.75rem;
   font-size: .8em;
   text-align: center;
@@ -555,12 +555,12 @@ h2 small {
 }
 
 @media (min-width: 1250px) {
-  .footer {
+  body > footer {
     margin-top: .5rem;
   }
 }
 
-.footer__link {
+body > footer a:not([class]) {
   color: inherit;
 }
 
