@@ -2,12 +2,14 @@
   --background-color: hsl(199, 100%, 82%);
   --main-color: #e03;
   --text-color: hsl(226 52% 27%);
+  --footer-text-color: hsl(226 52% 20%);
   --active-tab-text-color: hsla(226, 52%, 27%, .7);
 }
 
 @supports (color: oklch(0% 0 0)) {
   :root {
     --text-color: oklch(33.48% .1 268);
+    --footer-text-color: oklch(27.75% .077 268);
   }
 }
 
@@ -556,15 +558,17 @@ h2 small {
 }
 
 body > footer {
-  margin-top: 1.75rem;
-  font-size: .8em;
+  margin-top: 1.75em;
+  margin-bottom: 1.75em;
+
+  font-size: .9em;
   text-align: center;
-  padding-bottom: 1rem;
+  color: var(--footer-text-color);
 }
 
 @media (min-width: 1250px) {
   body > footer {
-    margin-top: .5rem;
+    margin-top: 1em;
   }
 }
 
