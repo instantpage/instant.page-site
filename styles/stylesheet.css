@@ -27,7 +27,7 @@
   counter-reset: footnote;
 
   -webkit-text-size-adjust: none;
-  font: 23px/1.4 system-ui, Segoe UI, sans-serif;
+  font: 23px/1.4 system-ui;
 }
 
 body {
