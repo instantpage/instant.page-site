@@ -3,11 +3,11 @@ const element = document.querySelector('.floating-logo')
 
 function func() {
   if (scrollY == 0 && scrolledClass) {
-    element.classList.remove('floating-logo--page-scrolled')
+    element.classList.remove('page-scrolled')
     scrolledClass = false
   }
   if (scrollY > 0 && !scrolledClass) {
-    element.classList.add('floating-logo--page-scrolled')
+    element.classList.add('page-scrolled')
     scrolledClass = true
   }
 }
