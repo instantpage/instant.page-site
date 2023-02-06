@@ -73,5 +73,10 @@ async function requestListener(req, res) {
 }
 
 ;(async () => {
-  http.createServer(requestListener).listen(8000)
+  const server = http.createServer(requestListener)
+  const port = 8000
+  server.on('listening', () => {
+    console.log(`-> http://127.0.0.1:${port}/`)
+  })
+  server.listen(port)
 })()
