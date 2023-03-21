@@ -37,6 +37,12 @@ Pages with a query string (a “?”) in their URL aren’t preloaded by default
 
 <p>If you’d like to only preload specific links, add a <code class="code">data-instant-whitelist</code> to the &lt;body&gt; and mark links to preload by adding a <code class="code">data-instant</code> attribute to them.</p>
 
+<h2 id="vary-accept">Servers sending a <code class="code">Vary: Accept</code> header and Chromium &lt; 110</h2>
+
+<p>Chromium &lt; 110, when encountering a <code class="code">Vary: Accept</code> header, will not use the preloaded pages, making preloading useless. Add a <code class="code">data-instant-vary-accept</code> attribute to your <code class="code">&lt;body&gt;</code> in that case.</p>
+
+<p>Shopify sites notably suffer from this. They are automatically enrolled in having preloading disabled in Chromium &lt; 110 — no need to add the attribute.</p>
+
 <h2 id="content-blockers">Content blockers</h2>
 
 <p>For <a href="https://github.com/easylist/easylist/issues/4023" target="_blank">dubious reasons</a> prefetching is considered a privacy violation by some content blockers such as uBlock Origin. Be sure to disable your content blocker on your site to see the preloading requests being made.</p>
