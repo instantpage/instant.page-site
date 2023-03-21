@@ -9,6 +9,17 @@ instant.page’s changelog.
 <_page__changelog__content>
 <h1 class="title">Changelog</h1>
 
+<h2>5.2.0 <small>— March 21, 2023</small></h2>
+
+<p>
+  - Disable unused preloading on Shopify sites in Chromium &lt; 110. Preloads in Chromium &lt; 110 were unused due to Shopify sending a <code>Vary: Accept</code> header that confused Chromium &lt; 110.<br>
+  - Add the <code>data-instant-vary-accept</code> option to disable preloading on Chromium &lt; 110 for sites sending a <code>Vary: Accept</code> header. (Shopify sites are automatically opted-in and don’t need to specify it.)<br>
+  - Preload with high priority (<code>fetchPriority=high</code>) on mouse/touch interactions.<br>
+  - Fix cross-origin preloading in Chromium (using the non-standard <code>as=document</code>, which might eventually disappear from Chromium).<br>
+  - Disable (non-working) cross-origin on non-Chromium browsers.<br>
+  - Comments in the source code now cover almost everything I know about prefetch and instant.page’s logic.
+</p>
+
 <h2>5.1.1 <small>— July 1, 2022</small></h2>
 
 <p>
