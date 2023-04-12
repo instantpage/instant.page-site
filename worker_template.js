@@ -71,7 +71,7 @@ const scripts = {}
 
 __SCRIPTS__
 
-const stylesheet = __STYLESHEET__
+const getStylesheet = () => __STYLESHEET__
 
 const pages = {}
 

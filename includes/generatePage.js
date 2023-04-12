@@ -4,8 +4,6 @@ import https from 'node:https'
 import versions from './versions.js'
 import pages from './pages.js'
 
-const stylesheet = fs.readFileSync('styles/stylesheet.css').toString().trim()
-
 let configPath
 if (fs.existsSync(new URL('../config.json', import.meta.url))) {
   configPath = '../config.json'
@@ -38,7 +36,7 @@ export function generatePage(path) {
   }
   header = header.replace('{{TITLE}}', title)
   header = header.replace('{{DESCRIPTION}}', pages[`page__${pagePath_}__description`])
-  header = header.replace('{{STYLESHEET}}', stylesheet)
+  header = header.replace('{{STYLESHEET}}', getStylesheet())
   header = header.replace('{{TWITTER_CARD}}', path == '' ? pages[`twitter-card-header`] : '')
   content += header
 
@@ -82,4 +80,8 @@ export function fetchGithubStars() {
   })
 
   return true
+}
+
+function getStylesheet() {
+  return fs.readFileSync('styles/stylesheet.css').toString().trim()
 }
