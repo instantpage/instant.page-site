@@ -1,5 +1,5 @@
 let scrolledClass = false
-const element = document.querySelector('.floating-logo')
+const element = document.querySelector('.background-logo')
 
 function func() {
   if (scrollY == 0 && scrolledClass) {
