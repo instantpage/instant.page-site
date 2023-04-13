@@ -564,10 +564,11 @@ body > div.background-logo {
   body > div.background-logo {
     display: revert;
     position: fixed;
-    inset-block-start: 75px;
+    inset-block-start: var(--header-block-size);
     inset-inline-start: -45px;
     opacity: .5;
 
+    padding-block-start: 27px;
     transition-duration: .5s;
     transition-property: opacity, filter;
   }
