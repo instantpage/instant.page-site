@@ -546,7 +546,7 @@ body > footer {
   color: var(--footer-text-color);
 }
 
-@media (min-width: 1250px) {
+@media (width >= 1250px) {
   body > footer {
     margin-top: 1em;
   }
