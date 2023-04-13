@@ -156,9 +156,16 @@ main > .h1--landing {
 }
 
 .h1__emphasis {
-  color: var(--main-color);
+  display: inline-block;
+
   font-style: normal;
   white-space: nowrap;
+  background: #e03;
+  background: linear-gradient(oklch(62% .25 0), oklch(60% .245 29));
+  -webkit-background-clip: text; /* https://crbug.com/1339290 */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: .8;
 }
 
 main > p {
