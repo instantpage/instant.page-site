@@ -40,6 +40,7 @@ body {
   --header-block-size: calc(var(--header-padding-y) * 2 + var(--header-logo-size));
 }
 
+
 body > header {
   position: fixed;
   inset-block-start: 0;
@@ -87,6 +88,7 @@ body > header > a > h1 > span {
   opacity: .375;
 }
 
+
 .main-grid {
   margin-block-start: var(--header-block-size);
   margin-inline: auto;
@@ -118,6 +120,7 @@ body > header > a > h1 > span {
     width: var(--three-columns-width);
   }
 }
+
 
 main {
   grid-area: main;
@@ -449,6 +452,7 @@ h2 small {
   font-size: .667em;
   font-weight: normal;
 }
+
 
 .aside {
   grid-area: aside;
