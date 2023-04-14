@@ -17,11 +17,12 @@
   --max-width: 820px;
   --page-padding: 12px;
   --nav-width: 235px;
-  --grid-gap: 80px;
+  --grid-column-gap: 80px;
+  --grid-row-gap: 40px;
   --main-column-width: calc(var(--max-width) + var(--page-padding) * 2);
   --side-column-width: calc(var(--nav-width));
-  --two-columns-width: calc(var(--max-width) + var(--page-padding) * 2 + var(--grid-gap) + var(--nav-width));
-  --three-columns-width: calc(var(--nav-width) + var(--grid-gap) + var(--two-columns-width));
+  --two-columns-width: calc(var(--max-width) + var(--page-padding) * 2 + var(--grid-column-gap) + var(--nav-width));
+  --three-columns-width: calc(var(--nav-width) + var(--grid-column-gap) + var(--two-columns-width));
   --code-fonts: ui-monospace, Consolas, monospace;
 
   counter-reset: footnote;
@@ -52,7 +53,7 @@ body {
       "header header header header header"
       "_1 main _fauxgap aside _2"
       "footer footer footer footer footer";
-    grid-template-columns: 1fr var(--main-column-width) var(--grid-gap) var(--nav-width) 1fr;
+    grid-template-columns: 1fr var(--main-column-width) var(--grid-column-gap) var(--nav-width) 1fr;
   }
 }
 
@@ -62,7 +63,7 @@ body {
       "header header header header header header header"
       "_1 _fauxemptyaside _fauxgap1 main _fauxgap2 aside _2"
       "footer footer footer footer footer footer footer";
-    grid-template-columns: 1fr var(--nav-width) var(--grid-gap) var(--main-column-width) var(--grid-gap) var(--nav-width) 1fr;
+    grid-template-columns: 1fr var(--nav-width) var(--grid-column-gap) var(--main-column-width) var(--grid-column-gap) var(--nav-width) 1fr;
   }
 }
 
@@ -487,7 +488,7 @@ main b {
 .aside {
   grid-area: aside;
   width: var(--nav-width);
-  margin-block-start: calc(var(--grid-gap) / 2);
+  margin-block-start: var(--grid-row-gap);
   margin-inline: auto;
 }
 
