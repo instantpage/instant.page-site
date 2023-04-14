@@ -88,7 +88,7 @@ body > header > a {
   text-decoration: none;
 }
 
-@media (min-width: 1250px) and (MAX-width: 1549px) {
+@media (1250px <= width < 1550px) {
   body > header > a {
     max-width: var(--two-columns-width);
     box-sizing: border-box;
@@ -403,7 +403,7 @@ main b {
   }
 }
 
-@media (min-width: 1250px) {
+@media (width >= 1250px) {
   .cta-menu--narrow {
     display: none;
   }
@@ -502,7 +502,7 @@ main b {
   }
 }
 
-@media (min-width: 1250px) {
+@media (width >= 1250px) {
   .aside__container {
     position: fixed;
     width: inherit;
@@ -513,7 +513,7 @@ main b {
   margin-bottom: 1em;
 }
 
-@media (min-width: 1250px) {
+@media (width >= 1250px) {
   .nav:first-child {
     margin-top: 2em;
   }
