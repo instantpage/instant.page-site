@@ -460,7 +460,8 @@ main b {
   margin-top: 1.43em;
 
   align-items: baseline;
-  gap: .7em;
+  column-gap: .7em;
+  flex-wrap: wrap;
 }
 
 .title--changelog-no-main-class-hack ~ article > header > h2 {
