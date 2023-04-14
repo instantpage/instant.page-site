@@ -32,6 +32,11 @@
 
 body {
   margin: initial;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main-grid"
+    "footer";
 
   background-color: var(--background-color);
   overflow-y: scroll;
@@ -42,6 +47,7 @@ body {
 
 
 body > header {
+  grid-area: header;
   position: fixed;
   inset-block-start: 0;
   width: 100%;
@@ -90,6 +96,7 @@ body > header > a > h1 > span {
 
 
 .main-grid {
+  grid-area: main-grid;
   margin-block-start: var(--header-block-size);
   margin-inline: auto;
   display: grid;
@@ -578,6 +585,7 @@ main b {
 
 @layer footer {
   body > footer {
+    grid-area: footer;
     margin-top: 1.75em;
     margin-bottom: 1.75em;
 
