@@ -7,105 +7,164 @@ instant.page’s changelog.
 </_page__changelog__description>
 
 <_page__changelog__content>
-<h1 class="title">Changelog</h1>
+<h1 class="title title--changelog-no-main-class-hack">Changelog</h1>
 
-<h2>5.2.0 <small>— March 21, 2023</small></h2>
+<article>
+  <header>
+    <h2>5.2.0</h2>
+    <time>March 21, 2023</time>
+  </header>
+  <p>
+    - Disable unused preloading on Shopify sites in Chromium &lt; 110. Preloads in Chromium &lt; 110 were unused due to Shopify sending a <code class="code">Vary: Accept</code> header that confused Chromium &lt; 110.<br>
+    - Add the <code class="code">data-instant-vary-accept</code> option to disable preloading on Chromium &lt; 110 for sites sending a <code class="code">Vary: Accept</code> header. (Shopify sites are automatically opted-in and don’t need to specify it.)<br>
+    - Preload with high priority (<code class="code">fetchPriority=high</code>) on mouse/touch interactions.<br>
+    - Fix cross-origin preloading in Chromium (using the non-standard <code class="code">as=document</code>, which might eventually disappear from Chromium).<br>
+    - Disable (non-working) cross-origin on non-Chromium browsers.<br>
+    - Comments in <a href="https://github.com/instantpage/instant.page/blob/master/instantpage.js" data-instant>the source code</a> now cover almost everything I know about <code class="code">prefetch</code> and instant.page’s logic.
+  </p>
+</article>
 
-<p>
-  - Disable unused preloading on Shopify sites in Chromium &lt; 110. Preloads in Chromium &lt; 110 were unused due to Shopify sending a <code class="code">Vary: Accept</code> header that confused Chromium &lt; 110.<br>
-  - Add the <code class="code">data-instant-vary-accept</code> option to disable preloading on Chromium &lt; 110 for sites sending a <code class="code">Vary: Accept</code> header. (Shopify sites are automatically opted-in and don’t need to specify it.)<br>
-  - Preload with high priority (<code class="code">fetchPriority=high</code>) on mouse/touch interactions.<br>
-  - Fix cross-origin preloading in Chromium (using the non-standard <code class="code">as=document</code>, which might eventually disappear from Chromium).<br>
-  - Disable (non-working) cross-origin on non-Chromium browsers.<br>
-  - Comments in <a href="https://github.com/instantpage/instant.page/blob/master/instantpage.js" data-instant>the source code</a> now cover almost everything I know about <code class="code">prefetch</code> and instant.page’s logic.
-</p>
+<article>
+  <header>
+    <h2>5.1.1</h2>
+    <time>July 1, 2022</time>
+  </header>
+  <p>
+    - Fix the error “event.target.closest is not a function” that would sometimes trigger in the mouseover event
+  </p>
+</article>
 
-<h2>5.1.1 <small>— July 1, 2022</small></h2>
+<article>
+  <header>
+    <h2>5.1.0</h2>
+    <time>May 27, 2020</time>
+  </header>
+  <p>
+    - Make triggering clicks on mousedown opt-in.
+  </p>
+</article>
 
-<p>
-  - Fix the error “event.target.closest is not a function” that would sometimes trigger in the mouseover event
-</p>
+<article>
+  <header>
+    <h2>5.0.1</h2>
+    <time>May 16, 2020</time>
+  </header>
+  <p>
+    - Fix the detection of opening a new tab when triggering the click on mousedown.
+  </p>
+</article>
 
-<h2>5.1.0 <small>— May 27, 2020</small></h2>
+<article>
+  <header>
+    <h2>5.0.0</h2>
+    <time>May 16, 2020</time>
+  </header>
+  <p><a href="/v5">Announcement.</a></p>
+  <p>
+    - Triggers the click on mousedown.<br>
+    - Fix a bug in Firefox for Android that was making the script error out.
+  </p>
+</article>
 
-<p>
-  - Make triggering clicks on mousedown opt-in.
-</p>
+<article>
+  <header>
+    <h2>3.0.0</h2>
+    <time>October 26, 2019</time>
+  </header>
+  <p><a href="/v3">Announcement.</a></p>
+  <p>
+    - Option to preload <a href="/intensity#viewport">every visible links</a>.<br>
+    - Doesn’t preload links already preloaded.<br>
+    - Allow it to run on 2G/data saver.<br>
+    - Links that you stop touching or hovering over don’t have their preloading request aborted anymore.
+  </p>
+</article>
 
-<h2>5.0.1 <small>— May 16, 2020</small></h2>
+<article>
+  <header>
+    <h2>2.0.1</h2>
+    <time>October 11, 2019</time>
+  </header>
+  <p>
+    - The script is now minified.
+  </p>
+</article>
 
-<p>
-  - Fix the detection of opening a new tab when triggering the click on mousedown.
-</p>
+<article>
+  <header>
+    <h2>2.0.0</h2>
+    <time>August 17, 2019</time>
+  </header>
+  <p>
+    <a href="/2">Announcement.</a>
+  </p>
+  <p>
+    - Option to preload <a href="/intensity#mousedown">on mousedown</a>.<br>
+    - Option to <a href="/intensity#custom-delay">set a custom delay</a> before preloading on hover.
+  </p>
+</article>
 
-<h2>5.0.0 <small>— May 16, 2020</small></h2>
+<article>
+  <header>
+    <h2>1.3.0 &amp; 1.3.1</h2>
+    <time>August 16, 2019</time>
+  </header>
+  <p>
+    - <a href="/blacklist#whitelist">Whitelist mode</a>.<br>
+    - Easier to use test suite (options are in the page itself rather than being undocumented command line parameters).
+  </p>
+</article>
 
-<p><a href="/v5">Announcement.</a></p>
+<article>
+  <header>
+    <h2>1.2.2</h2>
+    <time>March 16, 2019</time>
+  </header>
+  <p>- Don’t preload when data saver is enabled.</p>
+</article>
 
-<p>
-  - Triggers the click on mousedown.<br>
-  - Fix a bug in Firefox for Android that was making the script error out.
-</p>
+<article>
+  <header>
+    <h2>1.2.1</h2>
+    <time>February 26, 2019</time>
+  </header>
+  <p>- Fix HTTP links not being preloaded.</p>
+</article>
 
-<h2>3.0.0 <small>— October 26, 2019</small></h2>
+<article>
+  <header>
+    <h2>1.2.0</h2>
+    <time>February 23, 2019</time>
+  </header>
+  <p>
+    - Preload external urls if a <code class="code">data-instant-allow-external-links</code> attribute is present in the <code class="code">&lt;body&gt;</code>, or with a <code class="code">data-instant</code> attribute on the <code class="code">&lt;a&gt;</code> element.<br>
+    - Only preload HTTPS links, and HTTP if not on HTTPS.
+  </p>
+</article>
 
-<p><a href="/v3">Announcement.</a></p>
+<article>
+  <header>
+    <h2>1.1.1</h2>
+    <time>February 23, 2019</time>
+  </header>
+  <p>- Fix an error on <code class="code">&lt;a&gt;</code> elements without a <code class="code">href</code> attribute.</p>
+</article>
 
-<p>
-  - Option to preload <a href="/intensity#viewport">every visible links</a>.<br>
-  - Doesn’t preload links already preloaded.<br>
-  - Allow it to run on 2G/data saver.<br>
-  - Links that you stop touching or hovering over don’t have their preloading request aborted anymore.
-</p>
+<article>
+  <header>
+    <h2>1.1.0</h2>
+    <time>February 10, 2019</time>
+  </header>
+  <p>- Add ability to whitelist a link with a <code class="code">data-instant</code> attribute.</p>
+</article>
 
-<h2>2.0.1 <small>— October 11, 2019</small></h2>
-
-<p>
-  - The script is now minified.
-</p>
-
-<h2>2.0.0 <small>— August 17, 2019</small></h2>
-
-<p><a href="/2">Announcement.</a></p>
-
-<p>
-  - Option to preload <a href="/intensity#mousedown">on mousedown</a>.<br>
-  - Option to <a href="/intensity#custom-delay">set a custom delay</a> before preloading on hover.
-</p>
-
-<h2>1.3.0 &amp; 1.3.1 <small>— August 16, 2019</small></h2>
-
-<p>
-  - <a href="/blacklist#whitelist">Whitelist mode</a>.<br>
-  - Easier to use test suite (options are in the page itself rather than being undocumented command line parameters).
-</p>
-
-<h2>1.2.2 <small>— March 16, 2019</small></h2>
-
-<p>- Don’t preload when data saver is enabled.</p>
-
-<h2>1.2.1 <small>— February 26, 2019</small></h2>
-
-<p>- Fix HTTP links not being preloaded.</p>
-
-<h2>1.2.0 <small>— February 23, 2019</small></h2>
-
-<p>
-  - Preload external urls if a <code class="code">data-instant-allow-external-links</code> attribute is present in the <code class="code">&lt;body&gt;</code>, or with a <code class="code">data-instant</code> attribute on the <code class="code">&lt;a&gt;</code> element.<br>
-  - Only preload HTTPS links, and HTTP if not on HTTPS.
-</p>
-
-<h2>1.1.1 <small>— February 23, 2019</small></h2>
-
-<p>- Fix an error on <code class="code">&lt;a&gt;</code> elements without a <code class="code">href</code> attribute.</p>
-
-<h2>1.1.0 <small>— February 10, 2019</small></h2>
-
-<p>- Add ability to whitelist a link with a <code class="code">data-instant</code> attribute.</p>
-
-<h2>1.0.0 <small>— February 7, 2019</small></h2>
-
-<p>Initial release.</p>
+<article>
+  <header>
+    <h2>1.0.0</h2>
+    <time>February 7, 2019</time>
+  </header>
+  <p>Initial release.</p>
+</article>
 
 <include>cta-widget</include>
 </_page__changelog__content>

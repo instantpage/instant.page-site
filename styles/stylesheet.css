@@ -172,7 +172,7 @@ main > .h1--landing {
 }
 
 main > p {
-  margin: 1.15em 0;
+  margin-block: 1.15em;
 }
 
 .cta-widget {
@@ -448,9 +448,35 @@ main b {
   font-weight: 600;
 }
 
-h2 small {
-  font-size: .667em;
-  font-weight: normal;
+.title--changelog-no-main-class-hack ~ article {
+}
+
+.title--changelog-no-main-class-hack ~ article + article {
+  margin-top: 1.43em;
+}
+
+.title--changelog-no-main-class-hack ~ article > header {
+  display: flex;
+  margin-top: 1.43em;
+
+  align-items: baseline;
+  gap: .7em;
+}
+
+.title--changelog-no-main-class-hack ~ article > header > h2 {
+  /* Duplicated from `main > h2` */
+  margin-block: initial;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.title--changelog-no-main-class-hack ~ article > header > time {
+  font-size: .87em;
+  font-style: italic;
+}
+
+.title--changelog-no-main-class-hack ~ article > p {
+  margin-block: 1.15em;
 }
 
 
