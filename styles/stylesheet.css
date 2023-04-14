@@ -119,45 +119,41 @@ body > header > a > h1 > span {
 main {
   grid-area: main;
   max-width: var(--max-width);
+  width: calc(100vw - var(--page-padding) * 2); /* I have no idea why that’s needed. Apparently because .social-proof and .cta-widget are too long. Why are they too long in this context? */
   margin-block-start: var(--header-block-size);
+  margin-inline: auto;
 
   padding: 0 var(--page-padding);
 
   color: var(--text-color);
 }
 
-@media (MAX-width: 1249px) {
-  main {
-    margin-inline: auto;
-    width: calc(100vw - var(--page-padding) * 2); /* I have no idea why that’s needed. Apparently because .social-proof and .cta-widget are too long. Why are they too long in this context? */
-  }
-}
-
 @media (width >= 1250px) {
   main {
+    margin-inline: initial;
     width: var(--max-width);
   }
 }
 
 main > .title {
   font-weight: 600;
-  font-size: 1.85em;
+  font-size: 1.6em;
 }
 
-@media (MAX-width: 599px) {
+@media (width >= 600px) {
   main > .title {
-    font-size: 1.6em;
+    font-size: 1.85em;
   }
 }
 
 main > .h1--landing {
-  font-size: 2.3em;
+  font-size: 32px;
   text-align: center;
 }
 
-@media (MAX-width: 599px) {
+@media (width >= 600px) {
   main > .h1--landing {
-    font-size: 32px;
+    font-size: 2.3em;
   }
 }
 
@@ -258,8 +254,8 @@ main > p {
 }
 
 .social-proof > .grid {
-  --width: 112px;
-  --height: 75px;
+  --width: 75px;
+  --height: 50px;
 
   display: flex;
   overflow-x: scroll;
@@ -270,10 +266,10 @@ main > p {
   align-items: center;
 }
 
-@media (MAX-width: 599px) {
+@media (width >= 600px) {
   .social-proof > .grid {
-    --width: 75px;
-    --height: 50px;
+    --width: 112px;
+    --height: 75px;
   }
 }
 
@@ -284,13 +280,13 @@ main > p {
 }
 
 .social-proof > .grid > span {
-  font-size: .85em;
+  font-size: .7em;
   text-align: center;
 }
 
-@media (MAX-width: 599px) {
+@media (width >= 600px) {
   .social-proof > .grid > span {
-    font-size: .7em;
+    font-size: .85em;
   }
 }
 
@@ -397,9 +393,13 @@ main b {
   font-family: var(--code-fonts);
 }
 
-@media (MAX-width: 1249px) {
+.cta-menu--large {
+  display: none;
+}
+
+@media (width >= 1250px) {
   .cta-menu--large {
-    display: none;
+    display: revert;
   }
 }
 
@@ -488,17 +488,13 @@ main b {
   grid-area: aside;
   width: var(--nav-width);
   margin-block-start: calc(var(--grid-gap) / 2);
-}
-
-@media (MAX-width: 1249px) {
-  .aside {
-    margin-inline: auto;
-  }
+  margin-inline: auto;
 }
 
 @media (width >= 1250px) {
   .aside {
     margin-block-start: var(--header-block-size);
+    margin-inline: initial;
   }
 }
 
