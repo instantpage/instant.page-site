@@ -1,16 +1,16 @@
-let scrolledClass = false
-const element = document.querySelector('.background-logo')
+let hasModifierClass = false
+const $_ = document.querySelector('.background-logo')
 
-function func() {
-  if (scrollY == 0 && scrolledClass) {
-    element.classList.remove('page-scrolled')
-    scrolledClass = false
+updateBackgroundLogoVisibilityRelativeToScrollPosition()
+addEventListener('scroll', updateBackgroundLogoVisibilityRelativeToScrollPosition)
+
+function updateBackgroundLogoVisibilityRelativeToScrollPosition() {
+  if (scrollY == 0 && hasModifierClass) {
+    $_.classList.remove('page-scrolled')
+    hasModifierClass = false
   }
-  if (scrollY > 0 && !scrolledClass) {
-    element.classList.add('page-scrolled')
-    scrolledClass = true
+  if (scrollY > 0 && !hasModifierClass) {
+    $_.classList.add('page-scrolled')
+    hasModifierClass = true
   }
 }
-
-addEventListener('scroll', func)
-func()
