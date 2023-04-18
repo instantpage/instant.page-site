@@ -61,7 +61,7 @@ body {
   body {
     grid-template-areas:
       "header header header header header header header"
-      "_1 _fauxemptyaside _fauxgap1 main _fauxgap2 aside _2"
+      "_1 _fauxsymmetricaside _fauxgap1 main _fauxgap2 aside _2"
       "footer footer footer footer footer footer footer";
     grid-template-columns: 1fr var(--nav-width) var(--grid-column-gap) var(--main-column-width) var(--grid-column-gap) var(--nav-width) 1fr;
   }
