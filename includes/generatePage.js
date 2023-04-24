@@ -38,6 +38,8 @@ export function generatePage(path) {
   header = header.replace('{{DESCRIPTION}}', pages[`page__${pagePath_}__description`])
   header = header.replace('{{STYLESHEET}}', getStylesheet())
   header = header.replace('{{TWITTER_CARD}}', path == '' ? pages[`twitter-card-header`] : '')
+  const headerTitleTag = path === '' ? 'h1' : 'span'
+  header = header.replaceAll(/<(\/?)span-or-h1-if-index>/g, `<$1${headerTitleTag}>`)
   content += header
 
   content += generateWithIncludes(`page__${pagePath_}__content`)

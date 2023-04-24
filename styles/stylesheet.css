@@ -102,7 +102,7 @@ body > header > a > div/*:has(svg)*/ {
   margin-right: var(--margin);
 }
 
-body > header > a > h1 {
+body > header > a > :is(h1, span) {
   margin: 0;
   font-weight: 600;
   letter-spacing: .01em;
@@ -112,7 +112,7 @@ body > header > a > h1 {
   margin-bottom: 4px;
 }
 
-body > header > a > h1 > span {
+body > header > a > :is(h1, span) > span {
   opacity: .375;
 }
 
