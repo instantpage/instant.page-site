@@ -165,7 +165,7 @@ main.index > h1 > em {
   font-style: initial;
   white-space: nowrap;
   background: #e03;
-  background: linear-gradient(oklch(62% .25 0), oklch(60% .245 29));
+  background: linear-gradient(oklch(62% .25 0) 10%, oklch(60% .245 29));
   -webkit-background-clip: text; /* https://crbug.com/1339290 */
   background-clip: text;
   -webkit-text-fill-color: transparent;
