@@ -136,13 +136,13 @@ main {
   }
 }
 
-main > .title {
+main > h1:not([class]) {
   font-weight: 600;
   font-size: 1.6em;
 }
 
 @media (width >= 600px) {
-  main > .title {
+  main > h1:not([class]) {
     font-size: 1.85em;
   }
 }
