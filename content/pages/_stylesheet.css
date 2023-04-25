@@ -1,0 +1,20 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+body {
+  max-inline-size: 45em;
+  margin-inline: auto;
+}
+
+code {
+  border: 1px solid graytext;
+}
+
+nav > iframe {
+  inline-size: 100%;
+  block-size: 90vh;
+}

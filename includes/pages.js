@@ -18,6 +18,10 @@ function getContentDir(path) {
   lastFetch = performance.now()
   const contentDir = fs.readdirSync(path)
   contentDir.forEach((file) => {
+    if (file.startsWith('_')) {
+      return
+    }
+
     if (fs.lstatSync(`${path}/${file}`).isDirectory()) {
       getContentDir(`${path}/${file}`)
     }
