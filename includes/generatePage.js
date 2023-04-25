@@ -27,6 +27,7 @@ export function generatePage(path) {
   let content = ''
 
   let header = pages['header']
+  header += '\n\n'
   let title = pages[`page__${pagePath_}__title`]
   if (title) {
     title = [title, 'instant.page'].join(` ${pages['title-separator']} `)
@@ -45,6 +46,7 @@ export function generatePage(path) {
   content += generateWithIncludes(`page__${pagePath_}__content`)
 
   let footer = pages['footer']
+  footer = '\n\n' + footer
   footer = footer.toString().replace(new RegExp(`<a class="nav__link" href="/${path}"`), `<a class="nav__link nav__link--active" href="/${path}"`)
   footer = footer.replace(/\{\{VERSIONS_LATEST\}\}/g, versions.latest)
   footer = footer.replace(/\{\{VERSIONS_LATEST_HASH\}\}/g, versions.hashes[versions.latest])
