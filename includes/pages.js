@@ -38,8 +38,18 @@ function getContentDir(path) {
           pagesProxyTarget[`page__${path}__description`] = matches[1]
         }
 
-        const bodyStart = content.indexOf('<body>') + '<body>'.length
-        pagesProxyTarget[`page__${path}__content`] = content.substring(bodyStart).trim()
+
+        if (content.indexOf('<body>') !== -1) {
+          const bodyStart = content.indexOf('<body>') + '<body>'.length
+          pagesProxyTarget[`page__${path}__content`] = content.substring(bodyStart).trim()
+        }
+        else {
+          const mainOuterStart = content.search(/<main[^>]*>/)
+          const mainInnerStart = content.indexOf('>', mainOuterStart) + '>'.length
+          const mainInnerEnd = content.indexOf('</main>')
+          const mainInnerHtml = content.substring(mainInnerStart, mainInnerEnd)
+          pagesProxyTarget[`page__${path}__content`] = mainInnerHtml.trim()
+        }
       }
       else {
         const regex = /<_([^>]+)>(.*?)<\/_[^>]+>/gs
