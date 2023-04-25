@@ -39,10 +39,9 @@ function getContentDir(path) {
         }
 
         const mainOuterStart = content.search(/<main[^>]*>/)
-        const mainInnerStart = content.indexOf('>', mainOuterStart) + '>'.length
-        const mainInnerEnd = content.indexOf('</main>')
-        const mainInnerHtml = content.substring(mainInnerStart, mainInnerEnd)
-        pagesProxyTarget[`page__${path}__content`] = mainInnerHtml.trim()
+        const mainOuterEnd = content.indexOf('</main>') + '</main>'.length
+        const mainOuterHtml = content.substring(mainOuterStart, mainOuterEnd)
+        pagesProxyTarget[`page__${path}__content`] = mainOuterHtml.trim()
       }
       else {
         const regex = /<_([^>]+)>(.*?)<\/_[^>]+>/gs
