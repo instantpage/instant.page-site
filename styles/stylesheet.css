@@ -452,9 +452,6 @@ main b {
   font-weight: 600;
 }
 
-.title--changelog-no-main-class-hack ~ article {
-}
-
 .title--changelog-no-main-class-hack ~ article + article {
   margin-top: 1.43em;
 }
