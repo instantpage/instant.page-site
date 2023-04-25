@@ -452,33 +452,36 @@ main b {
   font-weight: 600;
 }
 
-main.changelog > article + article {
-  margin-top: 1.43em;
-}
 
-main.changelog > article > header {
-  display: flex;
-  margin-top: 1.43em;
+@layer changelog {
+  main.changelog > article + article {
+    margin-top: 1.43em;
+  }
 
-  align-items: baseline;
-  column-gap: .7em;
-  flex-wrap: wrap;
-}
+  main.changelog > article > header {
+    display: flex;
+    margin-top: 1.43em;
 
-main.changelog > article > header > h2 {
-  /* Duplicated from `main > h2` */
-  margin-block: initial;
-  font-size: 1.3em;
-  font-weight: 600;
-}
+    align-items: baseline;
+    column-gap: .7em;
+    flex-wrap: wrap;
+  }
 
-main.changelog > article > header > time {
-  font-size: .87em;
-  font-style: italic;
-}
+  main.changelog > article > header > h2 {
+    /* Duplicated from `main > h2` */
+    margin-block: initial;
+    font-size: 1.3em;
+    font-weight: 600;
+  }
 
-main.changelog > article > p {
-  margin-block: 1.15em;
+  main.changelog > article > header > time {
+    font-size: .87em;
+    font-style: italic;
+  }
+
+  main.changelog > article > p {
+    margin-block: 1.15em;
+  }
 }
 
 
