@@ -51,7 +51,7 @@ body {
   body {
     grid-template-areas:
       "header header header header header"
-      "_1 main _fauxgap aside _2"
+      "space-inline-start main space-gap-inline-end aside space-inline-end"
       "footer footer footer footer footer";
     grid-template-columns: 1fr var(--main-column-width) var(--grid-column-gap) var(--nav-width) 1fr;
   }
@@ -61,7 +61,7 @@ body {
   body {
     grid-template-areas:
       "header header header header header header header"
-      "_1 _fauxsymmetricaside _fauxgap1 main _fauxgap2 aside _2"
+      "space-inline-start space-symmetry-aside space-gap-inline-start main space-gap-inline-end aside space-inline-end"
       "footer footer footer footer footer footer footer";
     grid-template-columns: 1fr var(--nav-width) var(--grid-column-gap) var(--main-column-width) var(--grid-column-gap) var(--nav-width) 1fr;
   }
