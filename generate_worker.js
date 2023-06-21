@@ -2,7 +2,7 @@ import fs from 'node:fs'
 
 import pages from './includes/pages.js'
 import versions from './includes/versions.js'
-import {pagePath, generatePage, generateWithIncludes} from './includes/generatePage.js'
+import {pagePath, generatePage, generateWithIncludes, getStylesheet} from './includes/generatePage.js'
 
 function escapeTemplateLiteral(value) {
   return value
@@ -43,7 +43,7 @@ scriptsString = scriptsString.join(`\n\n`)
 worker = worker.replace(`__SCRIPTS__`, scriptsString)
 
 
-const stylesheet = fs.readFileSync('styles/stylesheet.css').toString().trim()
+const stylesheet = getStylesheet()
 worker = worker.replace(`__STYLESHEET__`, `\`${escapeTemplateLiteral(stylesheet)}\``)
 
 let pagesString = []

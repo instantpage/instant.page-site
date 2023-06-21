@@ -86,6 +86,6 @@ export function fetchGithubStars() {
   return true
 }
 
-function getStylesheet() {
+export function getStylesheet() {
   return fs.readFileSync('styles/stylesheet.css').toString().trim()
 }
