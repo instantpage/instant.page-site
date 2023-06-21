@@ -47,7 +47,7 @@ export function generatePage(path) {
 
   let footer = pages['footer']
   footer = '\n\n' + footer
-  footer = footer.toString().replace(new RegExp(`<a class="nav__link" href="/${path}"`), `<a class="nav__link nav__link--active" href="/${path}"`)
+  footer = footer.toString().replace(new RegExp(`<a href="/${path}"`), `<a class="active" href="/${path}"`)
   footer = footer.replace(/\{\{VERSIONS_LATEST\}\}/g, versions.latest)
   footer = footer.replace(/\{\{VERSIONS_LATEST_HASH\}\}/g, versions.hashes[versions.latest])
   footer = footer.replace(/\{\{GITHUB_STARS\}\}/, githubStars ? `${githubStars.toLocaleString()} stars` : 'Star')

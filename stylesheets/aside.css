@@ -1,4 +1,4 @@
-.aside {
+body > aside {
   grid-area: aside;
   width: var(--nav-width);
   margin-block-start: var(--grid-row-gap);
@@ -6,30 +6,30 @@
 }
 
 @media (width >= 1250px) {
-  .aside {
+  body > aside {
     margin-block-start: var(--header-block-size);
     margin-inline: initial;
   }
 }
 
 @media (width >= 1250px) {
-  .aside__container {
+  body > aside > div {
     position: fixed;
     width: inherit;
   }
 }
 
-.nav {
+body > aside > div > nav {
   margin-bottom: 1em;
 }
 
 @media (width >= 1250px) {
-  .nav:first-child {
+  body > aside > div > nav {
     margin-top: 2em;
   }
 }
 
-.nav__container {
+body > aside > div > nav > div {
   display: flex;
   flex-direction: column;
   background: hsl(0 0% 100% / .375);
@@ -43,14 +43,14 @@
 }
 
 @media (hover: hover) {
-  .nav__container {
+  body > aside > div > nav > div {
     padding: .1em 0;
     --padding-y: .2rem;
     --padding-x: .625rem;
   }
 }
 
-.nav__link {
+body > aside > div > nav > div > a {
   color: inherit;
   text-decoration: none;
   padding: var(--padding-y) var(--padding-x);
@@ -58,21 +58,21 @@
   font-size: .9em;
 }
 
-.nav__link:not(:first-child) {
+body > aside > div > nav > div > a:not(:first-child) {
   border-top: 1px solid hsl(0 0% 0% / .075);
 }
 
 @media (hover: hover) {
-  .nav__link:hover {
+  body > aside > div > nav > div > a:hover {
     background: hsl(0 0% 100% / .175);
   }
 }
 
-.nav__link--active {
+body > aside > div > nav > div > a.active {
   color: var(--active-tab-text-color);
 }
 
-.nav__title {
+body > aside > div > nav > div > h5 {
   margin: 0;
   font-weight: 400;
   text-transform: uppercase;
@@ -91,6 +91,6 @@
   height: var(--size);
 }
 
-.github-container {
+body > aside > div > .github-container {
   text-align: center;
 }
