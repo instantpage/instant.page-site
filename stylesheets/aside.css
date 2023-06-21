@@ -59,7 +59,7 @@
     font-size: .9em;
   }
 
-  body > aside > div > nav > div > a:not(:first-child) {
+  body > aside > div > nav > div > a:not(:first-of-type) {
     border-top: 1px solid hsl(0 0% 0% / .075);
   }
 
@@ -73,7 +73,12 @@
     color: var(--active-tab-text-color);
   }
 
-  body > aside > div > nav > div > h5 {
+  body > aside > div > nav > div > h2 {
+    scale: 0;
+    position: absolute;
+  }
+
+  body > aside > div > nav > div > h3 {
     margin: 0;
     font-weight: 400;
     text-transform: uppercase;
