@@ -1,96 +1,98 @@
-body > aside {
-  grid-area: aside;
-  width: var(--nav-width);
-  margin-block-start: var(--grid-row-gap);
-  margin-inline: auto;
-}
-
-@media (width >= 1250px) {
+@layer aside {
   body > aside {
-    margin-block-start: var(--header-block-size);
-    margin-inline: initial;
+    grid-area: aside;
+    width: var(--nav-width);
+    margin-block-start: var(--grid-row-gap);
+    margin-inline: auto;
   }
-}
 
-@media (width >= 1250px) {
-  body > aside > div {
-    position: fixed;
-    width: inherit;
+  @media (width >= 1250px) {
+    body > aside {
+      margin-block-start: var(--header-block-size);
+      margin-inline: initial;
+    }
   }
-}
 
-body > aside > div > nav {
-  margin-bottom: 1em;
-}
+  @media (width >= 1250px) {
+    body > aside > div {
+      position: fixed;
+      width: inherit;
+    }
+  }
 
-@media (width >= 1250px) {
   body > aside > div > nav {
-    margin-top: 2em;
+    margin-bottom: 1em;
   }
-}
 
-body > aside > div > nav > div {
-  display: flex;
-  flex-direction: column;
-  background: hsl(0 0% 100% / .375);
-  width: 100%;
-  padding: .2em 0;
-  border-radius: 6px;
-  box-shadow: inset 0 1px 0 hsl(0 0% 100% / .1),
-              0 2px 5px hsl(0 0% 0% / .04);
-  --padding-y: .4rem;
-  --padding-x: 1rem;
-}
+  @media (width >= 1250px) {
+    body > aside > div > nav {
+      margin-top: 2em;
+    }
+  }
 
-@media (hover: hover) {
   body > aside > div > nav > div {
-    padding: .1em 0;
-    --padding-y: .2rem;
-    --padding-x: .625rem;
+    display: flex;
+    flex-direction: column;
+    background: hsl(0 0% 100% / .375);
+    width: 100%;
+    padding: .2em 0;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 0 hsl(0 0% 100% / .1),
+                0 2px 5px hsl(0 0% 0% / .04);
+    --padding-y: .4rem;
+    --padding-x: 1rem;
   }
-}
 
-body > aside > div > nav > div > a {
-  color: inherit;
-  text-decoration: none;
-  padding: var(--padding-y) var(--padding-x);
-  position: relative;
-  font-size: .9em;
-}
-
-body > aside > div > nav > div > a:not(:first-child) {
-  border-top: 1px solid hsl(0 0% 0% / .075);
-}
-
-@media (hover: hover) {
-  body > aside > div > nav > div > a:hover {
-    background: hsl(0 0% 100% / .175);
+  @media (hover: hover) {
+    body > aside > div > nav > div {
+      padding: .1em 0;
+      --padding-y: .2rem;
+      --padding-x: .625rem;
+    }
   }
-}
 
-body > aside > div > nav > div > a.active {
-  color: var(--active-tab-text-color);
-}
+  body > aside > div > nav > div > a {
+    color: inherit;
+    text-decoration: none;
+    padding: var(--padding-y) var(--padding-x);
+    position: relative;
+    font-size: .9em;
+  }
 
-body > aside > div > nav > div > h5 {
-  margin: 0;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: .625em;
-  letter-spacing: .05em;
-  opacity: .85;
-  padding: .15rem var(--padding-x);
-  border-top: 1px solid hsl(0 0% 0% / .04);
-  background: hsl(0 0% 0% / .05);
-  cursor: default;
-}
+  body > aside > div > nav > div > a:not(:first-child) {
+    border-top: 1px solid hsl(0 0% 0% / .075);
+  }
 
-.external-link-icon {
-  --size: 14px;
-  width: var(--size);
-  height: var(--size);
-}
+  @media (hover: hover) {
+    body > aside > div > nav > div > a:hover {
+      background: hsl(0 0% 100% / .175);
+    }
+  }
 
-body > aside > div > .github-container {
-  text-align: center;
+  body > aside > div > nav > div > a.active {
+    color: var(--active-tab-text-color);
+  }
+
+  body > aside > div > nav > div > h5 {
+    margin: 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: .625em;
+    letter-spacing: .05em;
+    opacity: .85;
+    padding: .15rem var(--padding-x);
+    border-top: 1px solid hsl(0 0% 0% / .04);
+    background: hsl(0 0% 0% / .05);
+    cursor: default;
+  }
+
+  .external-link-icon {
+    --size: 14px;
+    width: var(--size);
+    height: var(--size);
+  }
+
+  body > aside > div > .github-container {
+    text-align: center;
+  }
 }
