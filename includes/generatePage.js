@@ -87,5 +87,11 @@ export function fetchGithubStars() {
 }
 
 export function getStylesheet() {
-  return fs.readFileSync('styles/stylesheet.css').toString().trim()
+  const stylesheets = []
+  fs.readdirSync('styles').forEach((file) => {
+    const stylesheet = fs.readFileSync(`styles/${file}`, {encoding: 'utf-8'}).trim()
+    stylesheets.push(stylesheet)
+  })
+  const concatenatedStylesheet = stylesheets.join('\n\n\n')
+  return concatenatedStylesheet
 }
