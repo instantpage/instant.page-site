@@ -1,0 +1,43 @@
+@layer background-logo {
+  body > div.background-logo {
+    display: none;
+  }
+
+  @media (width >= 1550px) {
+    body > div.background-logo {
+      display: revert;
+      position: fixed;
+      inset-block-start: var(--header-block-size);
+      inset-inline-start: -45px;
+      opacity: .5;
+
+      padding-block-start: 27px;
+      transition-duration: .5s;
+      transition-property: opacity, filter;
+    }
+  }
+
+  @media (width >= 1900px) {
+    body > div.background-logo {
+      inset-inline-start: -30px;
+    }
+  }
+
+  body > div.background-logo.page-scrolled {
+    opacity: .05;
+
+    filter: grayscale(.4);
+  }
+
+  body > div.background-logo > svg {
+    block-size: 400px;
+
+    border-radius: 999px;
+  }
+
+  @media (width >= 1900px) {
+    body > div.background-logo > svg {
+      block-size: 500px;
+    }
+  }
+}

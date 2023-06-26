@@ -1,0 +1,21 @@
+@layer footer {
+  body > footer {
+    grid-area: footer;
+    margin-top: 1.75em;
+    margin-bottom: 1.75em;
+
+    font-size: .9em;
+    text-align: center;
+    color: var(--footer-text-color);
+  }
+
+  @media (width >= 1250px) {
+    body > footer {
+      margin-top: 1em;
+    }
+  }
+
+  body > footer a {
+    color: inherit;
+  }
+}
