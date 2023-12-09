@@ -106,6 +106,7 @@ async function logRequest(request, version) {
   const userAgent = encodeURIComponent(request.headers.get("user-agent"))
   const country = encodeURIComponent(request.headers.get("cf-ipcountry"))
   const protocol = new URL(request.url).protocol
+  const tlsVersion = request.cf.tlsVersion
 
-  await fetch(`https://cdnstats.instant.page/?key=${key}&method=${method}&protocol=${protocol}&host=${host}&versionNumber=${version}&userAgent=${userAgent}&country=${country}`)
+  await fetch(`https://cdnstats.instant.page/?key=${key}&method=${method}&protocol=${protocol}&host=${host}&versionNumber=${version}&userAgent=${userAgent}&country=${country}&tlsVersion=${tlsVersion}`)
 }
