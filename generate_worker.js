@@ -74,4 +74,23 @@ worker = worker.replace('__CONFIG__', config)
 if (!fs.existsSync('build')) {
   fs.mkdirSync('build')
 }
+
+;(function renamePreviousWorkerBuild() {
+  const oldPath = 'build/worker.js'
+
+  if (!fs.existsSync(oldPath)) {
+    return
+  }
+
+  const oldWorker = fs.readFileSync(oldPath).toString()
+  if (oldWorker == worker) {
+    return
+  }
+
+  const {mtime} = fs.statSync(oldPath)
+  const isoMtime = mtime.toISOString().replaceAll(/[-:]/g, '').replace(/\.[0-9]{3}Z$/, 'Z')
+  const newPath = `build/worker ${isoMtime}.js`
+  fs.renameSync(oldPath, newPath)
+})()
+
 fs.writeFileSync('build/worker.js', worker)
