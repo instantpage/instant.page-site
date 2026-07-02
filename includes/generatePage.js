@@ -11,7 +11,7 @@ if (fs.existsSync(new URL('../config.json', import.meta.url))) {
 else {
   configPath = '../config.sample.json'
 }
-const config = (await import(configPath, {assert: {type: 'json'}})).default
+const config = (await import(configPath, {with: {type: 'json'}})).default
 
 let githubStars
 
