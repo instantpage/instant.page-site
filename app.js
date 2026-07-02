@@ -6,15 +6,6 @@ import pages from './includes/pages.js'
 import assets from './includes/assets.js'
 import {pagePath, generatePage, fetchGithubStars} from './includes/generatePage.js'
 
-let configPath
-if (fs.existsSync('./config.json')) {
-  configPath = './config.json'
-}
-else {
-  configPath = './config.sample.json'
-}
-const config = await import(configPath, {with: {type: 'json'}})
-
 let githubStarsFetched
 
 const assetMimeTypes = {
