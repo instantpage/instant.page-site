@@ -4,13 +4,8 @@ import https from 'node:https'
 import versions from './versions.js'
 import pages from './pages.js'
 
-let configPath
-if (fs.existsSync(new URL('../config.json', import.meta.url))) {
-  configPath = '../config.json'
-}
-else {
-  configPath = '../config.sample.json'
-}
+const configExists = fs.existsSync(new URL('../config.json', import.meta.url))
+const configPath = configExists ? '../config.json' : '../config.sample.json'
 const config = (await import(configPath, {with: {type: 'json'}})).default
 
 let githubStars
