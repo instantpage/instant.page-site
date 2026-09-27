@@ -108,5 +108,9 @@ async function logRequest(request, version) {
   const protocol = new URL(request.url).protocol
   const tlsVersion = request.cf.tlsVersion
 
-  await fetch(`https://cdnstats.instant.page/?key=${key}&method=${method}&protocol=${protocol}&host=${host}&versionNumber=${version}&userAgent=${userAgent}&country=${country}&tlsVersion=${tlsVersion}`)
+  await fetch('https://cdnstats.instant.page/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ key, method, protocol, host, versionNumber: version, userAgent, country, tlsVersion }),
+  })
 }
